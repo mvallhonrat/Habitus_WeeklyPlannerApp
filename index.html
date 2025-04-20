@@ -1174,6 +1174,9 @@ function applyTranslations(lang) {
 function setLanguage(lang) {
   localStorage.setItem("habitus_lang", lang);
   applyTranslations(lang);
+  updateRoleOptions();
+  renderViews();
+  updateCharts();
 
   const elegido = pasajes[lang][Math.floor(Math.random() * pasajes[lang].length)];
   const contenedor = document.getElementById("pasaje-inspirador");
@@ -1190,6 +1193,9 @@ function setLanguage(lang) {
 document.addEventListener('DOMContentLoaded', () => {
   const lang = localStorage.getItem("habitus_lang") || "es";
   applyTranslations(lang);
+  updateRoleOptions();
+  renderViews();
+  updateCharts();
 });
 </script>
 </body>
