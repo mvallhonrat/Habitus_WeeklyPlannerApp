@@ -105,7 +105,7 @@
 </div>
 <!-- Formulario de nueva tarea -->
 <div class="mb-2">
-<label class="block text-sm font-medium mb-1" for="taskInput">Nueva Tarea:</label>
+<label class="block text-sm font-medium mb-1" data-i18n="label_task" for="taskInput">Nueva Tarea:</label>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
 <input class="border rounded px-3 py-2 text-sm w-full touch-manipulation" id="taskInput" placeholder="Descripción de la tarea" type="text"/>
 <select class="border rounded px-3 py-2 text-sm w-full touch-manipulation" id="roleSelect">
@@ -146,8 +146,8 @@
 </div>
 <!-- Sección de revisión y controles -->
 <div class="mb-4">
-<label class="block text-sm font-medium mb-1" data-i18n="review" for="reviewInput">📝 Revisión semanal:</label>
-<textarea class="w-full border rounded px-3 py-2 text-sm touch-manipulation" id="reviewInput" placeholder="Escribe aquí una reflexión sobre tu semana..." rows="3"></textarea>
+<label class="block text-sm font-medium mb-1" data-i18n="label_review" for="reviewInput">📝 Revisión semanal:</label>
+<textarea class="w-full border rounded px-3 py-2 text-sm touch-manipulation" data-i18n-placeholder="placeholder_review" id="reviewInput" placeholder="Escribe aquí una reflexión sobre tu semana..." rows="3"></textarea>
 <button class="mt-3 bg-purple-600 text-white text-sm font-medium px-4 py-3 rounded hover:bg-purple-700 active:bg-purple-800 w-full sm:w-auto touch-manipulation" data-i18n="new_week" id="newWeekBtn" onclick="newWeek()">
       🌅 Nueva Semana
     </button>
@@ -222,7 +222,7 @@
       📥 Exportar Tareas
     </button>
 </div>
-<script>
+<script data-i18n="no_tasks">
     // Variables globales
     let roles = [];
     let tasks = [];
