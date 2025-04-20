@@ -111,14 +111,14 @@ const pasajes = {"es": [{"contenido": "Porque donde esté tu tesoro, allí estar
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
 <input class="border rounded px-3 py-2 text-sm w-full touch-manipulation" id="taskInput" placeholder="Descripción de la tarea" type="text"/>
 <select class="border rounded px-3 py-2 text-sm w-full touch-manipulation" id="roleSelect">
-<option disabled="" selected="" value="">Rol</option>
+<option data-i18n="opt_role" disabled="" selected="" value="">Rol</option>
 </select>
 <select class="border rounded px-3 py-2 text-sm w-full touch-manipulation" id="quadrantSelect">
-<option disabled="" selected="" value="">Cuadrante</option>
-<option value="1">I - Urgente/Importante</option>
-<option value="2">II - No Urgente/Importante</option>
-<option value="3">III - Urgente/No Importante</option>
-<option value="4">IV - No Urgente/No Importante</option>
+<option data-i18n="opt_quadrant" disabled="" selected="" value="">Cuadrante</option>
+<option data-i18n="q1" value="1">I - Urgente/Importante</option>
+<option data-i18n="q2" value="2">II - No Urgente/Importante</option>
+<option data-i18n="q3" value="3">III - Urgente/No Importante</option>
+<option data-i18n="q4" value="4">IV - No Urgente/No Importante</option>
 </select>
 <button class="bg-green-500 text-white text-sm px-3 py-2 rounded hover:bg-green-600 active:bg-green-700 w-full touch-manipulation" data-i18n="add_task_button" onclick="addTask()">
           ✔️ Añadir Tarea
@@ -133,13 +133,13 @@ const pasajes = {"es": [{"contenido": "Porque donde esté tu tesoro, allí estar
 <div class="mb-6">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <div class="bg-white p-4 rounded shadow-sm">
-<h3 class="text-lg font-semibold mb-2">Tareas por Cuadrante</h3>
+<h3 class="text-lg font-semibold mb-2" data-i18n="metric_quadrants">Tareas por Cuadrante</h3>
 <div class="w-full h-[300px]">
 <canvas id="chartQuadrants"></canvas>
 </div>
 </div>
 <div class="bg-white p-4 rounded shadow-sm">
-<h3 class="text-lg font-semibold mb-2">Completadas vs Pendientes</h3>
+<h3 class="text-lg font-semibold mb-2" data-i18n="chart_title_completion">Completadas vs Pendientes</h3>
 <div class="w-full h-[300px]">
 <canvas id="chartCompletion"></canvas>
 </div>
@@ -156,23 +156,23 @@ const pasajes = {"es": [{"contenido": "Porque donde esté tu tesoro, allí estar
 </div>
 <!-- Sección de métricas históricas -->
 <div class="mb-6">
-<h2 class="text-xl font-semibold mb-4">📊 Métricas Históricas</h2>
+<h2 class="text-xl font-semibold mb-4" data-i18n="historic_metrics">📊 Métricas Históricas</h2>
 <!-- Resumen de métricas actuales -->
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
 <div class="bg-white p-4 rounded shadow-sm">
-<h3 class="text-sm font-medium text-gray-500">Total de Tareas</h3>
+<h3 class="text-sm font-medium text-gray-500" data-i18n="metric_total">Total de Tareas</h3>
 <p class="text-2xl font-bold" id="totalTasks">0</p>
 </div>
 <div class="bg-white p-4 rounded shadow-sm">
-<h3 class="text-sm font-medium text-gray-500">Porcentaje Completado</h3>
+<h3 class="text-sm font-medium text-gray-500" data-i18n="metric_percent">Porcentaje Completado</h3>
 <p class="text-2xl font-bold" id="completionPercentage">0%</p>
 </div>
 <div class="bg-white p-4 rounded shadow-sm">
-<h3 class="text-sm font-medium text-gray-500">Roles Activos</h3>
+<h3 class="text-sm font-medium text-gray-500" data-i18n="metric_roles">Roles Activos</h3>
 <p class="text-2xl font-bold" id="activeRoles">0</p>
 </div>
 <div class="bg-white p-4 rounded shadow-sm">
-<h3 class="text-sm font-medium text-gray-500">Tareas por Cuadrante</h3>
+<h3 class="text-sm font-medium text-gray-500" data-i18n="metric_quadrants">Tareas por Cuadrante</h3>
 <div class="grid grid-cols-2 gap-2 mt-2">
 <div>
 <span class="text-xs text-red-500">Q1:</span>
@@ -196,19 +196,19 @@ const pasajes = {"es": [{"contenido": "Porque donde esté tu tesoro, allí estar
 <!-- Gráficos históricos -->
 <div class="grid grid-cols-1 gap-4">
 <div class="bg-white p-4 rounded shadow-sm">
-<h3 class="text-lg font-semibold mb-2">Porcentaje de Completado por Semana</h3>
+<h3 class="text-lg font-semibold mb-2" data-i18n="chart_completion_title">Porcentaje de Completado por Semana</h3>
 <div class="w-full h-[300px]">
 <canvas id="chartHistoricalCompletion"></canvas>
 </div>
 </div>
 <div class="bg-white p-4 rounded shadow-sm">
-<h3 class="text-lg font-semibold mb-2">Tareas por Cuadrante por Semana</h3>
+<h3 class="text-lg font-semibold mb-2" data-i18n="chart_quadrants_title">Tareas por Cuadrante por Semana</h3>
 <div class="w-full h-[300px]">
 <canvas id="chartHistoricalQuadrants"></canvas>
 </div>
 </div>
 <div class="bg-white p-4 rounded shadow-sm">
-<h3 class="text-lg font-semibold mb-2">Roles Activos por Semana</h3>
+<h3 class="text-lg font-semibold mb-2" data-i18n="chart_roles_title">Roles Activos por Semana</h3>
 <div class="w-full h-[300px]">
 <canvas id="chartHistoricalRoles"></canvas>
 </div>
