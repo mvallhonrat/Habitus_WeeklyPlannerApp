@@ -1125,7 +1125,6 @@ if (contenedor) {
 
 let currentLang = localStorage.getItem("habitus_lang") || "es";</script>
 <script>
-
 function applyTranslations(lang) {
   const t = translations[lang];
 
@@ -1171,7 +1170,8 @@ function applyTranslations(lang) {
   document.querySelector('[data-i18n="metric_roles"]')?.textContent = t.metric_roles;
   document.querySelector('[data-i18n="metric_quadrants"]')?.textContent = t.metric_quadrants;
 }
-(lang) {
+
+function setLanguage(lang) {
   localStorage.setItem("habitus_lang", lang);
   applyTranslations(lang);
 
