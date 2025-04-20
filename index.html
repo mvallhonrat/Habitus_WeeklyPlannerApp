@@ -1,19 +1,20 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="theme-color" content="#4f46e5" />
-  <meta name="description" content="Planificador Semanal basado en la Matriz de Prioridades" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <title>Habitus - Planificador Semanal</title>
-  <!-- Cargar Tailwind CSS desde CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@3"></script>
-  <link rel="manifest" href="manifest.json" />
-  <link rel="apple-touch-icon" href="icons/icon-192x192.png" />
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="#4f46e5" name="theme-color"/>
+<meta content="Planificador Semanal basado en la Matriz de Prioridades" name="description"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<title>Habitus - Planificador Semanal</title>
+<!-- Cargar Tailwind CSS desde CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3"></script>
+<link href="manifest.json" rel="manifest"/>
+<link href="icons/icon-192x192.png" rel="apple-touch-icon"/>
+<style>
     /* Optimizaciones para móvil */
     @media (max-width: 640px) {
       .text-2xl {
@@ -53,193 +54,173 @@
       }
     }
   </style>
-<link rel="icon" href="icons/icon-192x192.png" type="image/png">
+<link href="icons/icon-192x192.png" rel="icon" type="image/png"/>
 </head>
 <body class="bg-gray-50 text-gray-800 p-4 antialiased ios-standalone">
-  <!-- Título principal -->
-  <h1 class="text-2xl sm:text-3xl font-bold text-center mb-2 no-select">🌟 Habitus - Planificador Semanal</h1>
-
-  <!-- Recuadro de instrucciones - Colapsable en móvil -->
-  <details class="bg-blue-100 border-l-4 border-blue-500 text-blue-900 p-3 mb-4 rounded">
-    <summary class="font-medium cursor-pointer no-select">📖 Instrucciones de uso</summary>
-    <ul class="list-disc list-inside text-sm space-y-1 mt-2">
-      <li>🎭 <strong>Define tus Roles:</strong> Identifica los roles importantes en tu vida (por ejemplo: Padre, Profesional, Amigo). Estos serán las categorías bajo las cuales organizarás tus tareas semanales.</li>
-      <li>📝 <strong>Agrega tus Tareas:</strong> Para cada rol, añade las tareas que deseas realizar esta semana. Escribe una breve descripción y asigna el cuadrante correspondiente según su urgencia e importancia.</li>
-      <li>🔢 <strong>Prioriza con los Cuadrantes:</strong> Utiliza la Matriz de Prioridades (I-IV) para clasificar cada tarea:
+<!-- Título principal -->
+<h1 class="text-2xl sm:text-3xl font-bold text-center mb-2 no-select">🌟 Habitus - Planificador Semanal</h1><img alt="Logo Habitus" class="mx-auto mb-2 w-20 h-20 rounded-full shadow-md" src="icons/icon-192x192.png"/>
+<!-- Recuadro de instrucciones - Colapsable en móvil -->
+<details class="bg-blue-100 border-l-4 border-blue-500 text-blue-900 p-3 mb-4 rounded">
+<summary class="font-medium cursor-pointer no-select">📖 Instrucciones de uso</summary>
+<ul class="list-disc list-inside text-sm space-y-1 mt-2">
+<li>🎭 <strong>Define tus Roles:</strong> Identifica los roles importantes en tu vida (por ejemplo: Padre, Profesional, Amigo). Estos serán las categorías bajo las cuales organizarás tus tareas semanales.</li>
+<li>📝 <strong>Agrega tus Tareas:</strong> Para cada rol, añade las tareas que deseas realizar esta semana. Escribe una breve descripción y asigna el cuadrante correspondiente según su urgencia e importancia.</li>
+<li>🔢 <strong>Prioriza con los Cuadrantes:</strong> Utiliza la Matriz de Prioridades (I-IV) para clasificar cada tarea:
         <ul class="list-none ml-4 mt-1">
-          <li>I – Urgente e Importante (hacer de inmediato).</li>
-          <li>II – No Urgente e Importante (planificar tiempo para hacer).</li>
-          <li>III – Urgente y No Importante (intentar delegar o minimizar).</li>
-          <li>IV – No Urgente y No Importante (evitar en lo posible).</li>
-        </ul>
-      </li>
-      <li>✅ <strong>Marca las Completadas:</strong> A medida que termines cada tarea, márcala como realizada con la casilla de verificación.</li>
-      <li>🔄 <strong>Vista de Roles/Cuadrantes:</strong> Alterna entre la vista agrupada por roles o por cuadrantes usando las pestañas para obtener diferentes perspectivas de tus tareas.</li>
-      <li>📊 <strong>Revisa tus Métricas:</strong> Al finalizar la semana, revisa el resumen de tareas completadas y pendientes, y reflexiona sobre tu semana en Revisión Semanal.</li>
-      <li>📋 <strong>Exporta y Reinicia:</strong> Guarda un registro de tu semana utilizando Exportar Métricas y Exportar Tareas. Luego comienza una nueva semana con el botón Nueva Semana: solo las tareas completadas se removerán, las pendientes permanecerán para la siguiente semana.</li>
-    </ul>
-  </details>
-
-  <!-- Sección de Roles -->
-  <div class="mb-6">
-    <h2 class="text-xl font-semibold mb-2 no-select">🎭 Definir Roles</h2>
-    <div class="flex gap-2">
-      <input id="roleInput" type="text" placeholder="Nuevo rol..." 
-             class="border rounded px-3 py-2 flex-1 touch-manipulation" />
-      <button onclick="addRole()" id="addRoleBtn" 
-              class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 active:bg-blue-700 touch-manipulation">
+<li>I – Urgente e Importante (hacer de inmediato).</li>
+<li>II – No Urgente e Importante (planificar tiempo para hacer).</li>
+<li>III – Urgente y No Importante (intentar delegar o minimizar).</li>
+<li>IV – No Urgente y No Importante (evitar en lo posible).</li>
+</ul>
+</li>
+<li>✅ <strong>Marca las Completadas:</strong> A medida que termines cada tarea, márcala como realizada con la casilla de verificación.</li>
+<li>🔄 <strong>Vista de Roles/Cuadrantes:</strong> Alterna entre la vista agrupada por roles o por cuadrantes usando las pestañas para obtener diferentes perspectivas de tus tareas.</li>
+<li>📊 <strong>Revisa tus Métricas:</strong> Al finalizar la semana, revisa el resumen de tareas completadas y pendientes, y reflexiona sobre tu semana en Revisión Semanal.</li>
+<li>📋 <strong>Exporta y Reinicia:</strong> Guarda un registro de tu semana utilizando Exportar Métricas y Exportar Tareas. Luego comienza una nueva semana con el botón Nueva Semana: solo las tareas completadas se removerán, las pendientes permanecerán para la siguiente semana.</li>
+</ul>
+</details>
+<!-- Sección de Roles -->
+<div class="mb-6">
+<h2 class="text-xl font-semibold mb-2 no-select">🎭 Definir Roles</h2>
+<div class="flex gap-2">
+<input class="border rounded px-3 py-2 flex-1 touch-manipulation" id="roleInput" placeholder="Nuevo rol..." type="text"/>
+<button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 active:bg-blue-700 touch-manipulation" id="addRoleBtn" onclick="addRole()">
         ➕ Añadir Rol
       </button>
-    </div>
-    <div id="rolesList" class="mt-2 space-y-1"><!-- Lista de roles dinámicos --></div>
-  </div>
-
-  <!-- Controles: pestañas y formulario -->
-  <div class="mb-4">
-    <!-- Pestañas Roles / Cuadrantes -->
-    <div class="flex border-b border-gray-300 mb-3 no-select">
-      <button id="tabRoles" class="flex-1 px-3 py-3 text-sm font-medium text-gray-700 border-b-2 border-indigo-500 touch-manipulation" onclick="showRoles()">Por Roles</button>
-      <button id="tabQuadrants" class="flex-1 px-3 py-3 text-sm font-medium text-gray-600 hover:text-gray-800 border-b-2 border-transparent touch-manipulation" onclick="showQuadrants()">Por Cuadrantes</button>
-    </div>
-    <!-- Recordatorio de la última revisión -->
-    <div id="lastReviewBox" class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-900 p-3 mb-4 text-sm italic hidden">
+</div>
+<div class="mt-2 space-y-1" id="rolesList"><!-- Lista de roles dinámicos --></div>
+</div>
+<!-- Controles: pestañas y formulario -->
+<div class="mb-4">
+<!-- Pestañas Roles / Cuadrantes -->
+<div class="flex border-b border-gray-300 mb-3 no-select">
+<button class="flex-1 px-3 py-3 text-sm font-medium text-gray-700 border-b-2 border-indigo-500 touch-manipulation" id="tabRoles" onclick="showRoles()">Por Roles</button>
+<button class="flex-1 px-3 py-3 text-sm font-medium text-gray-600 hover:text-gray-800 border-b-2 border-transparent touch-manipulation" id="tabQuadrants" onclick="showQuadrants()">Por Cuadrantes</button>
+</div>
+<!-- Recordatorio de la última revisión -->
+<div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-900 p-3 mb-4 text-sm italic hidden" id="lastReviewBox">
       📌 <strong>Recuerda esto de la semana anterior:</strong> <span id="lastReviewText"></span>
-    </div>
-    <!-- Formulario de nueva tarea -->
-    <div class="mb-2">
-      <label for="taskInput" class="block text-sm font-medium mb-1">Nueva Tarea:</label>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-        <input id="taskInput" type="text" placeholder="Descripción de la tarea" 
-               class="border rounded px-3 py-2 text-sm w-full touch-manipulation" />
-        <select id="roleSelect" class="border rounded px-3 py-2 text-sm w-full touch-manipulation">
-          <option value="" disabled selected>Rol</option>
-        </select>
-        <select id="quadrantSelect" class="border rounded px-3 py-2 text-sm w-full touch-manipulation">
-          <option value="" disabled selected>Cuadrante</option>
-          <option value="1">I - Urgente/Importante</option>
-          <option value="2">II - No Urgente/Importante</option>
-          <option value="3">III - Urgente/No Importante</option>
-          <option value="4">IV - No Urgente/No Importante</option>
-        </select>
-        <button onclick="addTask()" 
-                class="bg-green-500 text-white text-sm px-3 py-2 rounded hover:bg-green-600 active:bg-green-700 w-full touch-manipulation">
+</div>
+<!-- Formulario de nueva tarea -->
+<div class="mb-2">
+<label class="block text-sm font-medium mb-1" for="taskInput">Nueva Tarea:</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+<input class="border rounded px-3 py-2 text-sm w-full touch-manipulation" id="taskInput" placeholder="Descripción de la tarea" type="text"/>
+<select class="border rounded px-3 py-2 text-sm w-full touch-manipulation" id="roleSelect">
+<option disabled="" selected="" value="">Rol</option>
+</select>
+<select class="border rounded px-3 py-2 text-sm w-full touch-manipulation" id="quadrantSelect">
+<option disabled="" selected="" value="">Cuadrante</option>
+<option value="1">I - Urgente/Importante</option>
+<option value="2">II - No Urgente/Importante</option>
+<option value="3">III - Urgente/No Importante</option>
+<option value="4">IV - No Urgente/No Importante</option>
+</select>
+<button class="bg-green-500 text-white text-sm px-3 py-2 rounded hover:bg-green-600 active:bg-green-700 w-full touch-manipulation" onclick="addTask()">
           ✔️ Añadir Tarea
         </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Vistas de tareas -->
-  <div id="rolesView" class="mb-6 overflow-x-hidden"></div>
-  <div id="quadrantsView" class="mb-6 hidden overflow-x-hidden"></div>
-
-  <!-- Sección de gráficos -->
-  <div class="mb-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div class="bg-white p-4 rounded shadow-sm">
-        <h3 class="text-lg font-semibold mb-2">Tareas por Cuadrante</h3>
-        <div class="w-full h-[300px]">
-          <canvas id="chartQuadrants"></canvas>
-        </div>
-      </div>
-      <div class="bg-white p-4 rounded shadow-sm">
-        <h3 class="text-lg font-semibold mb-2">Completadas vs Pendientes</h3>
-        <div class="w-full h-[300px]">
-          <canvas id="chartCompletion"></canvas>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Sección de revisión y controles -->
-  <div class="mb-4">
-    <label for="reviewInput" class="block text-sm font-medium mb-1">📝 Revisión semanal:</label>
-    <textarea id="reviewInput" rows="3" 
-              class="w-full border rounded px-3 py-2 text-sm touch-manipulation" 
-              placeholder="Escribe aquí una reflexión sobre tu semana..."></textarea>
-    <button id="newWeekBtn" onclick="newWeek()" 
-            class="mt-3 bg-purple-600 text-white text-sm font-medium px-4 py-3 rounded hover:bg-purple-700 active:bg-purple-800 w-full sm:w-auto touch-manipulation">
+</div>
+</div>
+</div>
+<!-- Vistas de tareas -->
+<div class="mb-6 overflow-x-hidden" id="rolesView"></div>
+<div class="mb-6 hidden overflow-x-hidden" id="quadrantsView"></div>
+<!-- Sección de gráficos -->
+<div class="mb-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-white p-4 rounded shadow-sm">
+<h3 class="text-lg font-semibold mb-2">Tareas por Cuadrante</h3>
+<div class="w-full h-[300px]">
+<canvas id="chartQuadrants"></canvas>
+</div>
+</div>
+<div class="bg-white p-4 rounded shadow-sm">
+<h3 class="text-lg font-semibold mb-2">Completadas vs Pendientes</h3>
+<div class="w-full h-[300px]">
+<canvas id="chartCompletion"></canvas>
+</div>
+</div>
+</div>
+</div>
+<!-- Sección de revisión y controles -->
+<div class="mb-4">
+<label class="block text-sm font-medium mb-1" for="reviewInput">📝 Revisión semanal:</label>
+<textarea class="w-full border rounded px-3 py-2 text-sm touch-manipulation" id="reviewInput" placeholder="Escribe aquí una reflexión sobre tu semana..." rows="3"></textarea>
+<button class="mt-3 bg-purple-600 text-white text-sm font-medium px-4 py-3 rounded hover:bg-purple-700 active:bg-purple-800 w-full sm:w-auto touch-manipulation" id="newWeekBtn" onclick="newWeek()">
       🌅 Nueva Semana
     </button>
-  </div>
-
-  <!-- Sección de métricas históricas -->
-  <div class="mb-6">
-    <h2 class="text-xl font-semibold mb-4">📊 Métricas Históricas</h2>
-    
-    <!-- Resumen de métricas actuales -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-      <div class="bg-white p-4 rounded shadow-sm">
-        <h3 class="text-sm font-medium text-gray-500">Total de Tareas</h3>
-        <p class="text-2xl font-bold" id="totalTasks">0</p>
-      </div>
-      <div class="bg-white p-4 rounded shadow-sm">
-        <h3 class="text-sm font-medium text-gray-500">Porcentaje Completado</h3>
-        <p class="text-2xl font-bold" id="completionPercentage">0%</p>
-      </div>
-      <div class="bg-white p-4 rounded shadow-sm">
-        <h3 class="text-sm font-medium text-gray-500">Roles Activos</h3>
-        <p class="text-2xl font-bold" id="activeRoles">0</p>
-      </div>
-      <div class="bg-white p-4 rounded shadow-sm">
-        <h3 class="text-sm font-medium text-gray-500">Tareas por Cuadrante</h3>
-        <div class="grid grid-cols-2 gap-2 mt-2">
-          <div>
-            <span class="text-xs text-red-500">Q1:</span>
-            <span class="text-sm font-medium" id="q1Count">0</span>
-          </div>
-          <div>
-            <span class="text-xs text-green-500">Q2:</span>
-            <span class="text-sm font-medium" id="q2Count">0</span>
-          </div>
-          <div>
-            <span class="text-xs text-yellow-500">Q3:</span>
-            <span class="text-sm font-medium" id="q3Count">0</span>
-          </div>
-          <div>
-            <span class="text-xs text-gray-500">Q4:</span>
-            <span class="text-sm font-medium" id="q4Count">0</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Gráficos históricos -->
-    <div class="grid grid-cols-1 gap-4">
-      <div class="bg-white p-4 rounded shadow-sm">
-        <h3 class="text-lg font-semibold mb-2">Porcentaje de Completado por Semana</h3>
-        <div class="w-full h-[300px]">
-          <canvas id="chartHistoricalCompletion"></canvas>
-        </div>
-      </div>
-      <div class="bg-white p-4 rounded shadow-sm">
-        <h3 class="text-lg font-semibold mb-2">Tareas por Cuadrante por Semana</h3>
-        <div class="w-full h-[300px]">
-          <canvas id="chartHistoricalQuadrants"></canvas>
-        </div>
-      </div>
-      <div class="bg-white p-4 rounded shadow-sm">
-        <h3 class="text-lg font-semibold mb-2">Roles Activos por Semana</h3>
-        <div class="w-full h-[300px]">
-          <canvas id="chartHistoricalRoles"></canvas>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Botones de exportación -->
-  <div class="mb-4 grid grid-cols-2 gap-2">
-    <button onclick="exportCSV('metrics')" 
-            class="bg-gray-300 text-gray-800 text-sm px-4 py-3 rounded hover:bg-gray-400 active:bg-gray-500 touch-manipulation">
+</div>
+<!-- Sección de métricas históricas -->
+<div class="mb-6">
+<h2 class="text-xl font-semibold mb-4">📊 Métricas Históricas</h2>
+<!-- Resumen de métricas actuales -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+<div class="bg-white p-4 rounded shadow-sm">
+<h3 class="text-sm font-medium text-gray-500">Total de Tareas</h3>
+<p class="text-2xl font-bold" id="totalTasks">0</p>
+</div>
+<div class="bg-white p-4 rounded shadow-sm">
+<h3 class="text-sm font-medium text-gray-500">Porcentaje Completado</h3>
+<p class="text-2xl font-bold" id="completionPercentage">0%</p>
+</div>
+<div class="bg-white p-4 rounded shadow-sm">
+<h3 class="text-sm font-medium text-gray-500">Roles Activos</h3>
+<p class="text-2xl font-bold" id="activeRoles">0</p>
+</div>
+<div class="bg-white p-4 rounded shadow-sm">
+<h3 class="text-sm font-medium text-gray-500">Tareas por Cuadrante</h3>
+<div class="grid grid-cols-2 gap-2 mt-2">
+<div>
+<span class="text-xs text-red-500">Q1:</span>
+<span class="text-sm font-medium" id="q1Count">0</span>
+</div>
+<div>
+<span class="text-xs text-green-500">Q2:</span>
+<span class="text-sm font-medium" id="q2Count">0</span>
+</div>
+<div>
+<span class="text-xs text-yellow-500">Q3:</span>
+<span class="text-sm font-medium" id="q3Count">0</span>
+</div>
+<div>
+<span class="text-xs text-gray-500">Q4:</span>
+<span class="text-sm font-medium" id="q4Count">0</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Gráficos históricos -->
+<div class="grid grid-cols-1 gap-4">
+<div class="bg-white p-4 rounded shadow-sm">
+<h3 class="text-lg font-semibold mb-2">Porcentaje de Completado por Semana</h3>
+<div class="w-full h-[300px]">
+<canvas id="chartHistoricalCompletion"></canvas>
+</div>
+</div>
+<div class="bg-white p-4 rounded shadow-sm">
+<h3 class="text-lg font-semibold mb-2">Tareas por Cuadrante por Semana</h3>
+<div class="w-full h-[300px]">
+<canvas id="chartHistoricalQuadrants"></canvas>
+</div>
+</div>
+<div class="bg-white p-4 rounded shadow-sm">
+<h3 class="text-lg font-semibold mb-2">Roles Activos por Semana</h3>
+<div class="w-full h-[300px]">
+<canvas id="chartHistoricalRoles"></canvas>
+</div>
+</div>
+</div>
+</div>
+<!-- Botones de exportación -->
+<div class="mb-4 grid grid-cols-2 gap-2">
+<button class="bg-gray-300 text-gray-800 text-sm px-4 py-3 rounded hover:bg-gray-400 active:bg-gray-500 touch-manipulation" onclick="exportCSV('metrics')">
       📥 Exportar Métricas
     </button>
-    <button onclick="exportCSV('tasks')" 
-            class="bg-gray-300 text-gray-800 text-sm px-4 py-3 rounded hover:bg-gray-400 active:bg-gray-500 touch-manipulation">
+<button class="bg-gray-300 text-gray-800 text-sm px-4 py-3 rounded hover:bg-gray-400 active:bg-gray-500 touch-manipulation" onclick="exportCSV('tasks')">
       📥 Exportar Tareas
     </button>
-  </div>
-
-  <script>
+</div>
+<script>
     // Variables globales
     let roles = [];
     let tasks = [];
