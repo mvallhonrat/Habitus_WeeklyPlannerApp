@@ -798,7 +798,7 @@
       
       // Agregar y guardar
       roles.push(newRole);
-      localStorage.setItem("covey_roles", JSON.stringify(roles));
+      localStorage.setItem("habitus_roles", JSON.stringify(roles));
       roleInput.value = "";
       updateRoleOptions();
       renderViews();  // actualizar la vista por roles
@@ -836,7 +836,7 @@
       };
       tasks.push(newTask);
       // Guardar en localStorage
-      localStorage.setItem("covey_tasks", JSON.stringify(tasks));
+      localStorage.setItem("habitus_tasks", JSON.stringify(tasks));
       // Limpiar formulario
       taskInput.value = "";
       roleSelect.value = "";
@@ -852,7 +852,7 @@
       if (task.completado === 'ELIMINADO') return;
       task.completed = !task.completed;
       task.completedDate = task.completed ? new Date().toISOString() : null;
-      localStorage.setItem("covey_tasks", JSON.stringify(tasks));
+      localStorage.setItem("habitus_tasks", JSON.stringify(tasks));
       // Refrescar vistas y gráficos
       renderViews();
     }
@@ -864,7 +864,7 @@
       if(!confirm("¿Estás seguro que deseas eliminar esta tarea?")) return;
       task.completado = 'ELIMINADO';
       task.completedDate = new Date().toISOString();
-      localStorage.setItem("covey_tasks", JSON.stringify(tasks));
+      localStorage.setItem("habitus_tasks", JSON.stringify(tasks));
       renderViews();
     }
 
@@ -906,7 +906,7 @@
       const now = new Date();
       const todayDateStr = now.toISOString().slice(0,10); // formato "YYYY-MM-DD"
       // 1. Solo una vez por día
-      if(localStorage.getItem("covey_lastResetDate") === todayDateStr) {
+      if(localStorage.getItem("habitus_lastResetDate") === todayDateStr) {
         alert("⚠️ Ya iniciaste una nueva semana hoy. Se sobrescribirá la información anterior con los últimos cambios.");
         // Eliminar registro anterior de métricas del mismo día
         metrics = metrics.filter(m => !m.fecha.startsWith(now.toLocaleDateString('es-ES')));
@@ -948,7 +948,7 @@
         revision: reviewText
       };
       metrics.push(metricsEntry);
-      localStorage.setItem("covey_metrics", JSON.stringify(metrics));
+      localStorage.setItem("habitus_metrics", JSON.stringify(metrics));
       // 5. Registrar detalle de tareas en log
       tasks.forEach(t => {
         // Buscar y eliminar registros anteriores de la misma tarea
@@ -968,13 +968,13 @@
           fechaFin: t.completedDate ? new Date(t.completedDate).toLocaleString('es-ES') : ""
         });
       });
-      localStorage.setItem("covey_tasksLog", JSON.stringify(tasksLog));
+      localStorage.setItem("habitus_tasksLog", JSON.stringify(tasksLog));
       // 6. Eliminar tareas completadas y conservar pendientes
       tasks = tasks.filter(t => !t.completed && t.completado !== 'ELIMINADO');
-      localStorage.setItem("covey_tasks", JSON.stringify(tasks));
+      localStorage.setItem("habitus_tasks", JSON.stringify(tasks));
       // 7. Guardar la última revisión para mostrarla la semana siguiente
       lastReviewText = reviewText;
-      localStorage.setItem("covey_lastReview", JSON.stringify(lastReviewText));
+      localStorage.setItem("habitus_lastReview", JSON.stringify(lastReviewText));
       // 8. Limpiar el campo de revisión para la nueva semana
       document.getElementById("reviewInput").value = "";
       // Mostrar la caja de "Recuerda esto..." con el texto recién guardado
@@ -988,8 +988,8 @@
       }
       // 9. Actualizar fecha de último reinicio
       lastResetTime = now.getTime();
-      localStorage.setItem("covey_lastReset", lastResetTime.toString());
-      localStorage.setItem("covey_lastResetDate", todayDateStr);
+      localStorage.setItem("habitus_lastReset", lastResetTime.toString());
+      localStorage.setItem("habitus_lastResetDate", todayDateStr);
       // 10. Refrescar vistas y gráficas para la nueva semana
       renderViews();
       alert("✅ ¡Nueva semana iniciada! Se han archivado las tareas completadas y puedes continuar con las pendientes.");
@@ -1081,11 +1081,11 @@
       
       // Eliminar el rol
       roles.splice(index, 1);
-      localStorage.setItem("covey_roles", JSON.stringify(roles));
+      localStorage.setItem("habitus_roles", JSON.stringify(roles));
       
       // Eliminar tareas asociadas a este rol
       tasks = tasks.filter(t => t.role !== roleToDelete);
-      localStorage.setItem("covey_tasks", JSON.stringify(tasks));
+      localStorage.setItem("habitus_tasks", JSON.stringify(tasks));
       
       // Actualizar vistas
       updateRoleOptions();
