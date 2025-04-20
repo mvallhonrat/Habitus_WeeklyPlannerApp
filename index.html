@@ -1124,6 +1124,11 @@ let currentLang = localStorage.getItem("habitus_lang") || "es";</script>
 function applyTranslations(lang) {
   const t = translations[lang];
   document.querySelectorAll('[data-i18n]').forEach(el => {
+  document.querySelectorAll('option[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.textContent = t[key];
+  });
+
     const key = el.getAttribute('data-i18n');
     if (t[key]) el.innerHTML = t[key];
   });
