@@ -6,9 +6,9 @@
     "add_task": "Añadir tarea",
     "roles": "Definir Roles",
     "review": "Revisión semanal",
-    "new_week": "Nueva Semana",
-    "export_metrics": "Exportar Métricas",
-    "export_tasks": "Exportar Tareas",
+    "new_week": "🌅 Nueva Semana",
+    "export_metrics": "📥 Exportar Métricas",
+    "export_tasks": "📥 Exportar Tareas",
     "instructions": "Instrucciones de uso",
     "tabs_roles": "Por Roles",
     "tabs_quadrants": "Por Cuadrantes",
@@ -22,7 +22,15 @@
     "inst_8": "<li data-i18n=\"inst_8\">✅ <strong>Marca las Completadas:</strong> A medida que termines cada tarea, márcala como realizada con la casilla de verificación.</li>",
     "inst_9": "<li data-i18n=\"inst_9\">🔄 <strong>Vista de Roles/Cuadrantes:</strong> Alterna entre la vista agrupada por roles o por cuadrantes usando las pestañas para obtener diferentes perspectivas de tus tareas.</li>",
     "inst_10": "<li data-i18n=\"inst_10\">📊 <strong>Revisa tus Métricas:</strong> Al finalizar la semana, revisa el resumen de tareas completadas y pendientes, y reflexiona sobre tu semana en Revisión Semanal.</li>",
-    "inst_11": "<li data-i18n=\"inst_11\">📋 <strong>Exporta y Reinicia:</strong> Guarda un registro de tu semana utilizando Exportar Métricas y Exportar Tareas. Luego comienza una nueva semana con el botón Nueva Semana: solo las tareas completadas se removerán, las pendientes permanecerán para la siguiente semana.</li>"
+    "inst_11": "<li data-i18n=\"inst_11\">📋 <strong>Exporta y Reinicia:</strong> Guarda un registro de tu semana utilizando Exportar Métricas y Exportar Tareas. Luego comienza una nueva semana con el botón Nueva Semana: solo las tareas completadas se removerán, las pendientes permanecerán para la siguiente semana.</li>",
+    "label_task": "Nueva Tarea:",
+    "label_review": "📝 Revisión semanal:",
+    "no_tasks": "No hay tareas asignadas",
+    "no_tasks_simple": "Sin tareas",
+    "placeholder_review": "Escribe aquí una reflexión sobre tu semana...",
+    "metrics_summary": "📋 Tareas Totales: {total}, ✅ Completadas: {done}, ⏳ Pendientes: {pending}, 📈 Porcentaje completado: {percent}%",
+    "chart_title_quadrants": "Tareas por Cuadrante",
+    "chart_title_completion": "Completadas vs Pendientes"
   },
   "en": {
     "title": "Weekly Planner",
@@ -31,9 +39,9 @@
     "add_task": "Add task",
     "roles": "Define Roles",
     "review": "Weekly Review",
-    "new_week": "New Week",
-    "export_metrics": "Export Metrics",
-    "export_tasks": "Export Tasks",
+    "new_week": "🌅 New Week",
+    "export_metrics": "📥 Export Metrics",
+    "export_tasks": "📥 Export Tasks",
     "instructions": "📖 How to Use",
     "tabs_roles": "By Roles",
     "tabs_quadrants": "By Quadrants",
@@ -43,6 +51,14 @@
     "inst_4": "✅ <strong>Mark Completed Tasks:</strong> As you finish each task, check it off.",
     "inst_5": "🔄 <strong>Roles/Quadrants View:</strong> Switch views to see tasks grouped by role or by quadrant.",
     "inst_6": "📊 <strong>Review Metrics:</strong> At the end of the week, check your summary and reflect using the <em>Weekly Review</em>.",
-    "inst_7": "📋 <strong>Export and Restart:</strong> Save your week’s data with <strong>Export Metrics</strong> and <strong>Export Tasks</strong>. Then start a new week: completed tasks will be removed, pending ones will remain."
+    "inst_7": "📋 <strong>Export and Restart:</strong> Save your week’s data with <strong>Export Metrics</strong> and <strong>Export Tasks</strong>. Then start a new week: completed tasks will be removed, pending ones will remain.",
+    "label_task": "New Task:",
+    "label_review": "📝 Weekly Review:",
+    "no_tasks": "No tasks assigned",
+    "no_tasks_simple": "No tasks",
+    "placeholder_review": "Write here your weekly reflection...",
+    "metrics_summary": "📋 Total Tasks: {total}, ✅ Completed: {done}, ⏳ Pending: {pending}, 📈 Completion Rate: {percent}%",
+    "chart_title_quadrants": "Tasks by Quadrant",
+    "chart_title_completion": "Completed vs Pending"
   }
 }
