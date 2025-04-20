@@ -9,8 +9,9 @@
     "new_week": "Nueva Semana",
     "export_metrics": "Exportar Métricas",
     "export_tasks": "Exportar Tareas",
-    "define_roles": "Define tus Roles",
-    "instructions": "Instrucciones de uso"
+    "instructions": "Instrucciones de uso",
+    "tabs_roles": "Por Roles",
+    "tabs_quadrants": "Por Cuadrantes"
   },
   "en": {
     "title": "Weekly Planner",
@@ -22,7 +23,8 @@
     "new_week": "New Week",
     "export_metrics": "Export Metrics",
     "export_tasks": "Export Tasks",
-    "define_roles": "Define your Roles",
-    "instructions": "Instructions"
+    "instructions": "Instructions",
+    "tabs_roles": "By Roles",
+    "tabs_quadrants": "By Quadrants"
   }
 }
