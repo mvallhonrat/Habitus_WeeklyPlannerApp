@@ -19,10 +19,10 @@
     "inst_5": "<li data-i18n=\"inst_5\">II – No Urgente e Importante (planificar tiempo para hacer).</li>",
     "inst_6": "<li data-i18n=\"inst_6\">III – Urgente y No Importante (intentar delegar o minimizar).</li>",
     "inst_7": "<li data-i18n=\"inst_7\">IV – No Urgente y No Importante (evitar en lo posible).</li>",
-    "inst_8": "<li data-i18n=\"inst_8\">✅ <strong>Marca las Completadas:</strong> A medida que termines cada tarea, márcala como realizada con la casilla de verificación.</li>",
-    "inst_9": "<li data-i18n=\"inst_9\">🔄 <strong>Vista de Roles/Cuadrantes:</strong> Alterna entre la vista agrupada por roles o por cuadrantes usando las pestañas para obtener diferentes perspectivas de tus tareas.</li>",
-    "inst_10": "<li data-i18n=\"inst_10\">📊 <strong>Revisa tus Métricas:</strong> Al finalizar la semana, revisa el resumen de tareas completadas y pendientes, y reflexiona sobre tu semana en Revisión Semanal.</li>",
-    "inst_11": "<li data-i18n=\"inst_11\">📋 <strong>Exporta y Reinicia:</strong> Guarda un registro de tu semana utilizando Exportar Métricas y Exportar Tareas. Luego comienza una nueva semana con el botón Nueva Semana: solo las tareas completadas se removerán, las pendientes permanecerán para la siguiente semana.</li>",
+    "inst_8": "✅ <strong>Marca las Completadas:</strong> A medida que termines cada tarea, márcala como realizada con la casilla de verificación.",
+    "inst_9": "🔄 <strong>Vista de Roles/Cuadrantes:</strong> Alterna entre la vista agrupada por roles o por cuadrantes usando las pestañas para obtener diferentes perspectivas de tus tareas.",
+    "inst_10": "📊 <strong>Revisa tus Métricas:</strong> Al finalizar la semana, revisa el resumen de tareas completadas y pendientes, y reflexiona sobre tu semana en Revisión Semanal.",
+    "inst_11": "📋 <strong>Exporta y Reinicia:</strong> Guarda un registro de tu semana utilizando Exportar Métricas y Exportar Tareas. Luego comienza una nueva semana con el botón Nueva Semana: solo las tareas completadas se removerán, las pendientes permanecerán para la siguiente semana.",
     "label_task": "Nueva Tarea:",
     "label_review": "📝 Revisión semanal:",
     "no_tasks": "No hay tareas asignadas",
@@ -59,6 +59,10 @@
     "placeholder_review": "Write here your weekly reflection...",
     "metrics_summary": "📋 Total Tasks: {total}, ✅ Completed: {done}, ⏳ Pending: {pending}, 📈 Completion Rate: {percent}%",
     "chart_title_quadrants": "Tasks by Quadrant",
-    "chart_title_completion": "Completed vs Pending"
+    "chart_title_completion": "Completed vs Pending",
+    "inst_8": "✅ <strong>Mark Completed Tasks:</strong> As you finish each task, check it off using the checkbox.",
+    "inst_9": "🔄 <strong>Roles/Quadrants View:</strong> Switch between the grouped view by roles or by quadrants for different perspectives.",
+    "inst_10": "📊 <strong>Review Your Metrics:</strong> At the end of the week, check the summary of completed and pending tasks and reflect using the Weekly Review.",
+    "inst_11": "📋 <strong>Export and Reset:</strong> Save a record of your week using Export Metrics and Export Tasks. Then start a new week: only completed tasks will be removed, pending ones will remain."
   }
 }
