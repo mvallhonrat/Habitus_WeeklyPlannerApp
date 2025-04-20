@@ -1103,27 +1103,6 @@
     });
   </script>
 
-<script>
-let currentLang = localStorage.getItem("habitus_lang") || "es";
-function setLanguage(lang) {
-  currentLang = lang;
-  localStorage.setItem("habitus_lang", lang);
-  applyTranslations();
-}
-function applyTranslations() {
-  fetch("lang.json")
-    .then(res => res.json())
-    .then(data => {
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        if (data[currentLang][key]) {
-          el.textContent = data[currentLang][key];
-        }
-      });
-    });
-}
-document.addEventListener("DOMContentLoaded", applyTranslations);
-</script>
 <script src="pasajes_bilingues.js"></script><script>
 const lang = localStorage.getItem("habitus_lang") || "es";
 const elegido = pasajes[lang][Math.floor(Math.random() * pasajes[lang].length)];
@@ -1136,5 +1115,63 @@ if (contenedor) {
     </div>
   `;
 }
+</script><script>
+let currentLang = localStorage.getItem("habitus_lang") || "es";
+
+function setLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem("habitus_lang", lang);
+  applyTranslations();
+}
+
+function applyTranslations() {
+  fetch("lang.json")
+    .then(res => res.json())
+    .then(data => {
+      // Cambiar textos visibles con data-i18n
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (data[currentLang][key]) {
+          el.textContent = data[currentLang][key];
+        }
+      });
+
+      // Placeholder y opciones (si aplica)
+      const taskInput = document.getElementById("taskInput");
+      if (taskInput) {
+        taskInput.placeholder = currentLang === "en" ? "Task description" : "Descripción de la tarea";
+      }
+
+      const roleSelect = document.getElementById("roleSelect");
+      if (roleSelect) {
+        roleSelect.options[0].text = currentLang === "en" ? "Role" : "Rol";
+      }
+
+      const quadrantSelect = document.getElementById("quadrantSelect");
+      if (quadrantSelect) {
+        const labels = {
+          es: ["Cuadrante", "I - Urgente/Importante", "II - No Urgente/Importante", "III - Urgente/No Importante", "IV - No Urgente/No Importante"],
+          en: ["Quadrant", "I - Urgent/Important", "II - Not Urgent/Important", "III - Urgent/Not Important", "IV - Not Urgent/Not Important"]
+        };
+        for (let i = 0; i < quadrantSelect.options.length; i++) {
+          quadrantSelect.options[i].text = labels[currentLang][i];
+        }
+      }
+
+      // Pasaje dinámico
+      const elegido = pasajes[currentLang][Math.floor(Math.random() * pasajes[currentLang].length)];
+      const contenedor = document.getElementById("pasaje-inspirador");
+      if (contenedor) {
+        contenedor.innerHTML = `
+          <div class='text-gray-700 text-center mt-4'>
+            <p class='italic mb-1'>"${elegido.contenido}"</p>
+            <p class='text-sm text-gray-500'>${elegido.pasaje}</p>
+          </div>
+        `;
+      }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", applyTranslations);
 </script></body>
 </html> 
