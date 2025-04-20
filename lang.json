@@ -1,0 +1,28 @@
+{
+  "es": {
+    "title": "Planificador Semanal",
+    "subtitle": "Organiza tu semana con claridad y propósito",
+    "new_task": "Nueva tarea",
+    "add_task": "Añadir tarea",
+    "roles": "Definir Roles",
+    "review": "Revisión semanal",
+    "new_week": "Nueva Semana",
+    "export_metrics": "Exportar Métricas",
+    "export_tasks": "Exportar Tareas",
+    "define_roles": "Define tus Roles",
+    "instructions": "Instrucciones de uso"
+  },
+  "en": {
+    "title": "Weekly Planner",
+    "subtitle": "Plan your week with clarity and purpose",
+    "new_task": "New task",
+    "add_task": "Add task",
+    "roles": "Define Roles",
+    "review": "Weekly Review",
+    "new_week": "New Week",
+    "export_metrics": "Export Metrics",
+    "export_tasks": "Export Tasks",
+    "define_roles": "Define your Roles",
+    "instructions": "Instructions"
+  }
+}
