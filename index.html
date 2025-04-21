@@ -10,7 +10,7 @@
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
 <title data-i18n="title">Habitus - Planificador Semanal</title>
 <!-- Cargar Tailwind CSS desde CDN -->
-<div class="bg-white rounded-lg shadow-md p-4 mb-6 max-w-2xl mx-auto text-center"><div class="flex items-center justify-center gap-4 mb-2"><img alt="Logo Habitus" class="w-20 h-20 rounded-full shadow" src="icons/icon-192x192.png"/><h1 class="text-3xl font-bold text-gray-800" data-i18n="title">Planificador Semanal</h1></div><div class="mb-6" id="pasaje-inspirador"></div></div><script src="https://cdn.tailwindcss.com"></script>
+<div class="bg-white rounded-lg shadow-md p-4 mb-6 max-w-2xl mx-auto text-center"><div class="flex items-center justify-center gap-4 mb-2"><img alt="Logo Habitus" class="w-20 h-20 shadow" src="icons/icon-192x192.png"/><h1 class="text-3xl font-bold text-gray-800" data-i18n="title">Planificador Semanal</h1></div><div class="mb-6" id="pasaje-inspirador"></div></div><script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3"></script>
 <link href="manifest.json" rel="manifest"/>
 <link href="icons/icon-192x192.png" rel="apple-touch-icon"/>
@@ -54,35 +54,31 @@
       }
     }
   </style>
-</head>
-<body class="bg-gray-50 text-gray-800 p-4 antialiased ios-standalone"><script>
-const pasajes = {"es": [{"contenido": "Porque donde esté tu tesoro, allí estará también tu corazón.", "pasaje": "Mateo 6:21"}, {"contenido": "Busquen primeramente el reino de Dios y su justicia, y todas estas cosas les serán añadidas.", "pasaje": "Mateo 6:33"}, {"contenido": "El mayor entre ustedes será su servidor.", "pasaje": "Mateo 23:11"}, {"contenido": "Cuando ustedes digan ‘sí’, que sea realmente sí; y cuando digan ‘no’, que sea no.", "pasaje": "Mateo 5:37"}, {"contenido": "De noche y de día, duerma o se levante, la semilla brota y crece sin que él sepa cómo.", "pasaje": "Marcos 4:27"}, {"contenido": "Traten a los demás tal y como quieren que ellos los traten a ustedes.", "pasaje": "Lucas 6:31"}, {"contenido": "Conocerán la verdad, y la verdad los hará libres.", "pasaje": "Juan 8:32"}, {"contenido": "Confía en el Señor de todo corazón, y no te apoyes en tu propia prudencia. Reconócelo en todos tus caminos, y él allanará tus sendas.", "pasaje": "Proverbios 3:5-6"}, {"contenido": "Tu palabra es una lámpara a mis pies; es una luz en mi sendero.", "pasaje": "Salmo 119:105"}, {"contenido": "Tengan cuidado de su manera de vivir. No vivan como necios sino como sabios, aprovechando bien el tiempo.", "pasaje": "Efesios 5:15-16"}, {"contenido": "Porque donde esté tu tesoro, allí estará también tu corazón.", "pasaje": "Mateo 6:21"}, {"contenido": "Busquen primeramente el reino de Dios y su justicia, y todas estas cosas les serán añadidas.", "pasaje": "Mateo 6:33"}, {"contenido": "El mayor entre ustedes será su servidor.", "pasaje": "Mateo 23:11"}, {"contenido": "Cuando ustedes digan ‘sí’, que sea realmente sí; y cuando digan ‘no’, que sea no.", "pasaje": "Mateo 5:37"}, {"contenido": "De noche y de día, duerma o se levante, la semilla brota y crece sin que él sepa cómo.", "pasaje": "Marcos 4:27"}, {"contenido": "Traten a los demás tal y como quieren que ellos los traten a ustedes.", "pasaje": "Lucas 6:31"}, {"contenido": "Conocerán la verdad, y la verdad los hará libres.", "pasaje": "Juan 8:32"}, {"contenido": "Confía en el Señor de todo corazón, y no te apoyes en tu propia prudencia. Reconócelo en todos tus caminos, y él allanará tus sendas.", "pasaje": "Proverbios 3:5-6"}, {"contenido": "Tu palabra es una lámpara a mis pies; es una luz en mi sendero.", "pasaje": "Salmo 119:105"}, {"contenido": "Tengan cuidado de su manera de vivir. No vivan como necios sino como sabios, aprovechando bien el tiempo.", "pasaje": "Efesios 5:15-16"}, {"contenido": "Porque donde esté tu tesoro, allí estará también tu corazón.", "pasaje": "Mateo 6:21"}, {"contenido": "Busquen primeramente el reino de Dios y su justicia, y todas estas cosas les serán añadidas.", "pasaje": "Mateo 6:33"}, {"contenido": "El mayor entre ustedes será su servidor.", "pasaje": "Mateo 23:11"}, {"contenido": "Cuando ustedes digan ‘sí’, que sea realmente sí; y cuando digan ‘no’, que sea no.", "pasaje": "Mateo 5:37"}, {"contenido": "De noche y de día, duerma o se levante, la semilla brota y crece sin que él sepa cómo.", "pasaje": "Marcos 4:27"}, {"contenido": "Traten a los demás tal y como quieren que ellos los traten a ustedes.", "pasaje": "Lucas 6:31"}, {"contenido": "Conocerán la verdad, y la verdad los hará libres.", "pasaje": "Juan 8:32"}, {"contenido": "Confía en el Señor de todo corazón, y no te apoyes en tu propia prudencia. Reconócelo en todos tus caminos, y él allanará tus sendas.", "pasaje": "Proverbios 3:5-6"}, {"contenido": "Tu palabra es una lámpara a mis pies; es una luz en mi sendero.", "pasaje": "Salmo 119:105"}, {"contenido": "Tengan cuidado de su manera de vivir. No vivan como necios sino como sabios, aprovechando bien el tiempo.", "pasaje": "Efesios 5:15-16"}, {"contenido": "Porque donde esté tu tesoro, allí estará también tu corazón.", "pasaje": "Mateo 6:21"}, {"contenido": "Busquen primeramente el reino de Dios y su justicia, y todas estas cosas les serán añadidas.", "pasaje": "Mateo 6:33"}, {"contenido": "El mayor entre ustedes será su servidor.", "pasaje": "Mateo 23:11"}, {"contenido": "Cuando ustedes digan ‘sí’, que sea realmente sí; y cuando digan ‘no’, que sea no.", "pasaje": "Mateo 5:37"}, {"contenido": "De noche y de día, duerma o se levante, la semilla brota y crece sin que él sepa cómo.", "pasaje": "Marcos 4:27"}, {"contenido": "Traten a los demás tal y como quieren que ellos los traten a ustedes.", "pasaje": "Lucas 6:31"}, {"contenido": "Conocerán la verdad, y la verdad los hará libres.", "pasaje": "Juan 8:32"}, {"contenido": "Confía en el Señor de todo corazón, y no te apoyes en tu propia prudencia. Reconócelo en todos tus caminos, y él allanará tus sendas.", "pasaje": "Proverbios 3:5-6"}, {"contenido": "Tu palabra es una lámpara a mis pies; es una luz en mi sendero.", "pasaje": "Salmo 119:105"}, {"contenido": "Tengan cuidado de su manera de vivir. No vivan como necios sino como sabios, aprovechando bien el tiempo.", "pasaje": "Efesios 5:15-16"}, {"contenido": "Porque donde esté tu tesoro, allí estará también tu corazón.", "pasaje": "Mateo 6:21"}, {"contenido": "Busquen primeramente el reino de Dios y su justicia, y todas estas cosas les serán añadidas.", "pasaje": "Mateo 6:33"}, {"contenido": "El mayor entre ustedes será su servidor.", "pasaje": "Mateo 23:11"}, {"contenido": "Cuando ustedes digan ‘sí’, que sea realmente sí; y cuando digan ‘no’, que sea no.", "pasaje": "Mateo 5:37"}, {"contenido": "De noche y de día, duerma o se levante, la semilla brota y crece sin que él sepa cómo.", "pasaje": "Marcos 4:27"}, {"contenido": "Traten a los demás tal y como quieren que ellos los traten a ustedes.", "pasaje": "Lucas 6:31"}, {"contenido": "Conocerán la verdad, y la verdad los hará libres.", "pasaje": "Juan 8:32"}, {"contenido": "Confía en el Señor de todo corazón, y no te apoyes en tu propia prudencia. Reconócelo en todos tus caminos, y él allanará tus sendas.", "pasaje": "Proverbios 3:5-6"}, {"contenido": "Tu palabra es una lámpara a mis pies; es una luz en mi sendero.", "pasaje": "Salmo 119:105"}, {"contenido": "Tengan cuidado de su manera de vivir. No vivan como necios sino como sabios, aprovechando bien el tiempo.", "pasaje": "Efesios 5:15-16"}], "en": [{"contenido": "For where your treasure is, there your heart will be also.", "pasaje": "Matthew 6:21"}, {"contenido": "But seek first his kingdom and his righteousness, and all these things will be given to you as well.", "pasaje": "Matthew 6:33"}, {"contenido": "The greatest among you will be your servant.", "pasaje": "Matthew 23:11"}, {"contenido": "All you need to say is simply ‘Yes’ or ‘No’; anything beyond this comes from the evil one.", "pasaje": "Matthew 5:37"}, {"contenido": "Night and day, whether he sleeps or gets up, the seed sprouts and grows, though he does not know how.", "pasaje": "Mark 4:27"}, {"contenido": "Do to others as you would have them do to you.", "pasaje": "Luke 6:31"}, {"contenido": "Then you will know the truth, and the truth will set you free.", "pasaje": "John 8:32"}, {"contenido": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.", "pasaje": "Proverbs 3:5-6"}, {"contenido": "Your word is a lamp for my feet, a light on my path.", "pasaje": "Psalm 119:105"}, {"contenido": "Be very careful, then, how you live—not as unwise but as wise, making the most of every opportunity.", "pasaje": "Ephesians 5:15-16"}, {"contenido": "For where your treasure is, there your heart will be also.", "pasaje": "Matthew 6:21"}, {"contenido": "But seek first his kingdom and his righteousness, and all these things will be given to you as well.", "pasaje": "Matthew 6:33"}, {"contenido": "The greatest among you will be your servant.", "pasaje": "Matthew 23:11"}, {"contenido": "All you need to say is simply ‘Yes’ or ‘No’; anything beyond this comes from the evil one.", "pasaje": "Matthew 5:37"}, {"contenido": "Night and day, whether he sleeps or gets up, the seed sprouts and grows, though he does not know how.", "pasaje": "Mark 4:27"}, {"contenido": "Do to others as you would have them do to you.", "pasaje": "Luke 6:31"}, {"contenido": "Then you will know the truth, and the truth will set you free.", "pasaje": "John 8:32"}, {"contenido": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.", "pasaje": "Proverbs 3:5-6"}, {"contenido": "Your word is a lamp for my feet, a light on my path.", "pasaje": "Psalm 119:105"}, {"contenido": "Be very careful, then, how you live—not as unwise but as wise, making the most of every opportunity.", "pasaje": "Ephesians 5:15-16"}, {"contenido": "For where your treasure is, there your heart will be also.", "pasaje": "Matthew 6:21"}, {"contenido": "But seek first his kingdom and his righteousness, and all these things will be given to you as well.", "pasaje": "Matthew 6:33"}, {"contenido": "The greatest among you will be your servant.", "pasaje": "Matthew 23:11"}, {"contenido": "All you need to say is simply ‘Yes’ or ‘No’; anything beyond this comes from the evil one.", "pasaje": "Matthew 5:37"}, {"contenido": "Night and day, whether he sleeps or gets up, the seed sprouts and grows, though he does not know how.", "pasaje": "Mark 4:27"}, {"contenido": "Do to others as you would have them do to you.", "pasaje": "Luke 6:31"}, {"contenido": "Then you will know the truth, and the truth will set you free.", "pasaje": "John 8:32"}, {"contenido": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.", "pasaje": "Proverbs 3:5-6"}, {"contenido": "Your word is a lamp for my feet, a light on my path.", "pasaje": "Psalm 119:105"}, {"contenido": "Be very careful, then, how you live—not as unwise but as wise, making the most of every opportunity.", "pasaje": "Ephesians 5:15-16"}, {"contenido": "For where your treasure is, there your heart will be also.", "pasaje": "Matthew 6:21"}, {"contenido": "But seek first his kingdom and his righteousness, and all these things will be given to you as well.", "pasaje": "Matthew 6:33"}, {"contenido": "The greatest among you will be your servant.", "pasaje": "Matthew 23:11"}, {"contenido": "All you need to say is simply ‘Yes’ or ‘No’; anything beyond this comes from the evil one.", "pasaje": "Matthew 5:37"}, {"contenido": "Night and day, whether he sleeps or gets up, the seed sprouts and grows, though he does not know how.", "pasaje": "Mark 4:27"}, {"contenido": "Do to others as you would have them do to you.", "pasaje": "Luke 6:31"}, {"contenido": "Then you will know the truth, and the truth will set you free.", "pasaje": "John 8:32"}, {"contenido": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.", "pasaje": "Proverbs 3:5-6"}, {"contenido": "Your word is a lamp for my feet, a light on my path.", "pasaje": "Psalm 119:105"}, {"contenido": "Be very careful, then, how you live—not as unwise but as wise, making the most of every opportunity.", "pasaje": "Ephesians 5:15-16"}, {"contenido": "For where your treasure is, there your heart will be also.", "pasaje": "Matthew 6:21"}, {"contenido": "But seek first his kingdom and his righteousness, and all these things will be given to you as well.", "pasaje": "Matthew 6:33"}, {"contenido": "The greatest among you will be your servant.", "pasaje": "Matthew 23:11"}, {"contenido": "All you need to say is simply ‘Yes’ or ‘No’; anything beyond this comes from the evil one.", "pasaje": "Matthew 5:37"}, {"contenido": "Night and day, whether he sleeps or gets up, the seed sprouts and grows, though he does not know how.", "pasaje": "Mark 4:27"}, {"contenido": "Do to others as you would have them do to you.", "pasaje": "Luke 6:31"}, {"contenido": "Then you will know the truth, and the truth will set you free.", "pasaje": "John 8:32"}, {"contenido": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.", "pasaje": "Proverbs 3:5-6"}, {"contenido": "Your word is a lamp for my feet, a light on my path.", "pasaje": "Psalm 119:105"}, {"contenido": "Be very careful, then, how you live—not as unwise but as wise, making the most of every opportunity.", "pasaje": "Ephesians 5:15-16"}]};
-</script>
+<link href="./icons/icon-192x192.png" rel="icon" type="image/png"/></head>
+<body class="bg-gray-50 text-gray-800 p-4 antialiased ios-standalone">
 <div class="absolute top-4 right-4 text-sm text-gray-600" id="langSelector">
 <button class="mx-1 text-xl" onclick="setLanguage('es')" title="Español">🇪🇸</button>
 <button class="mx-1 text-xl" onclick="setLanguage('en')" title="English">🇺🇸</button>
 </div>
 <!-- Título principal -->
 <!-- Recuadro de instrucciones - Colapsable en móvil -->
-<details class="bg-blue-100 border-l-4 border-blue-500 text-blue-900 p-3 mb-4 rounded">
-<summary class="font-medium cursor-pointer no-select" data-i18n="instructions">📖 Instrucciones de uso</summary>
-<ul class="list-disc list-inside text-sm space-y-1 mt-2">
+<div class="bg-blue-100 border-l-4 border-blue-500 text-blue-900 p-3 mb-4 rounded">
+<div class="flex items-center cursor-pointer gap-2" onclick="toggleInstructions()">
+<button class="text-blue-700 hover:text-blue-900" id="instructionsToggle">▼</button>
+<h3 class="font-medium no-select" data-i18n="instructions_title">📖 Instrucciones de uso</h3>
+</div>
+<div class="mt-2" id="instructionsContent">
+<ul class="list-disc list-inside text-sm space-y-2">
 <li data-i18n="inst_1">🎭 <strong>Define tus Roles:</strong> Identifica los roles importantes en tu vida (por ejemplo: Padre, Profesional, Amigo). Estos serán las categorías bajo las cuales organizarás tus tareas semanales.</li>
 <li data-i18n="inst_2">📝 <strong>Agrega tus Tareas:</strong> Para cada rol, añade las tareas que deseas realizar esta semana. Escribe una breve descripción y asigna el cuadrante correspondiente según su urgencia e importancia.</li>
-<li data-i18n="inst_3">🔢 <strong>Prioriza con los Cuadrantes:</strong> Utiliza la Matriz de Prioridades (I-IV) para clasificar cada tarea:
-        <ul class="list-none ml-4 mt-1">
-<li data-i18n="inst_4">I – Urgente e Importante (hacer de inmediato).</li>
-<li data-i18n="inst_5">II – No Urgente e Importante (planificar tiempo para hacer).</li>
-<li data-i18n="inst_6">III – Urgente y No Importante (intentar delegar o minimizar).</li>
-<li data-i18n="inst_7">IV – No Urgente y No Importante (evitar en lo posible).</li>
-</ul>
-</li>
+<li data-i18n="inst_3">🔢 Prioriza con los Cuadrantes: Utiliza la Matriz de Prioridades (I-IV) para clasificar cada tarea:</li><div class="ml-6 mt-1 text-sm" data-i18n="inst_3_sub"></div>
 <li data-i18n="inst_8">✅ <strong>Marca las Completadas:</strong> A medida que termines cada tarea, márcala como realizada con la casilla de verificación.</li>
 <li data-i18n="inst_9">🔄 <strong>Vista de Roles/Cuadrantes:</strong> Alterna entre la vista agrupada por roles o por cuadrantes usando las pestañas para obtener diferentes perspectivas de tus tareas.</li>
 <li data-i18n="inst_10">📊 <strong>Revisa tus Métricas:</strong> Al finalizar la semana, revisa el resumen de tareas completadas y pendientes, y reflexiona sobre tu semana en Revisión Semanal.</li>
 <li data-i18n="inst_11">📋 <strong>Exporta y Reinicia:</strong> Guarda un registro de tu semana utilizando Exportar Métricas y Exportar Tareas. Luego comienza una nueva semana con el botón Nueva Semana: solo las tareas completadas se removerán, las pendientes permanecerán para la siguiente semana.</li>
 </ul>
-</details>
+</div>
+</div>
 <!-- Sección de Roles -->
 <div class="mb-6">
 <h2 class="text-xl font-semibold mb-2 no-select" data-i18n="roles">🎭 Definir Roles</h2>
@@ -109,16 +105,16 @@ const pasajes = {"es": [{"contenido": "Porque donde esté tu tesoro, allí estar
 <div class="mb-2">
 <label class="block text-sm font-medium mb-1" data-i18n="label_task" for="taskInput">Nueva Tarea:</label>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-<input class="border rounded px-3 py-2 text-sm w-full touch-manipulation" id="taskInput" placeholder="Descripción de la tarea" type="text"/>
+<input class="border rounded px-3 py-2 text-sm w-full touch-manipulation" data-i18n-placeholder="placeholder_task" id="taskInput" placeholder="Descripción de la tarea" type="text"/>
 <select class="border rounded px-3 py-2 text-sm w-full touch-manipulation" id="roleSelect">
-<option data-i18n="opt_role" disabled="" selected="" value="">Rol</option>
+<option disabled="" selected="" value="">Rol</option>
 </select>
 <select class="border rounded px-3 py-2 text-sm w-full touch-manipulation" id="quadrantSelect">
-<option data-i18n="opt_quadrant" disabled="" selected="" value="">Cuadrante</option>
-<option data-i18n="q1" value="1">I - Urgente/Importante</option>
-<option data-i18n="q2" value="2">II - No Urgente/Importante</option>
-<option data-i18n="q3" value="3">III - Urgente/No Importante</option>
-<option data-i18n="q4" value="4">IV - No Urgente/No Importante</option>
+<option disabled="" selected="" value="">Cuadrante</option>
+<option value="1">I - Urgente/Importante</option>
+<option value="2">II - No Urgente/Importante</option>
+<option value="3">III - Urgente/No Importante</option>
+<option value="4">IV - No Urgente/No Importante</option>
 </select>
 <button class="bg-green-500 text-white text-sm px-3 py-2 rounded hover:bg-green-600 active:bg-green-700 w-full touch-manipulation" data-i18n="add_task_button" onclick="addTask()">
           ✔️ Añadir Tarea
@@ -156,7 +152,7 @@ const pasajes = {"es": [{"contenido": "Porque donde esté tu tesoro, allí estar
 </div>
 <!-- Sección de métricas históricas -->
 <div class="mb-6">
-<h2 class="text-xl font-semibold mb-4" data-i18n="historic_metrics">📊 Métricas Históricas</h2>
+<h2 class="text-xl font-semibold mb-4">📊 Métricas Históricas</h2>
 <!-- Resumen de métricas actuales -->
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
 <div class="bg-white p-4 rounded shadow-sm">
@@ -224,7 +220,7 @@ const pasajes = {"es": [{"contenido": "Porque donde esté tu tesoro, allí estar
       📥 Exportar Tareas
     </button>
 </div>
-<script data-i18n="metric_quadrants">
+<script data-i18n="no_tasks">
     // Variables globales
     let roles = [];
     let tasks = [];
@@ -1117,61 +1113,203 @@ if (contenedor) {
   `;
 }
 </script>
-<script data-i18n="metric_percent">const translations = {"es": {"metric_completed": "Completadas", "metric_pending": "Pendientes", "title": "Planificador Semanal", "subtitle": "Organiza tu semana con claridad y propósito", "new_task": "Nueva tarea", "add_task": "Añadir tarea", "roles": "Definir Roles", "review": "Revisión semanal", "new_week": "🌅 Nueva Semana", "export_metrics": "📥 Exportar Métricas", "export_tasks": "📥 Exportar Tareas", "instructions": "Instrucciones de uso", "tabs_roles": "Por Roles", "tabs_quadrants": "Por Cuadrantes", "inst_1": "<li data-i18n=\"inst_1\">🎭 <strong>Define tus Roles:</strong> Identifica los roles importantes en tu vida (por ejemplo: Padre, Profesional, Amigo). Estos serán las categorías bajo las cuales organizarás tus tareas semanales.</li>", "inst_2": "<li data-i18n=\"inst_2\">📝 <strong>Agrega tus Tareas:</strong> Para cada rol, añade las tareas que deseas realizar esta semana. Escribe una breve descripción y asigna el cuadrante correspondiente según su urgencia e importancia.</li>", "inst_3": "<li data-i18n=\"inst_3\">🔢 <strong>Prioriza con los Cuadrantes:</strong> Utiliza la Matriz de Prioridades (I-IV) para clasificar cada tarea:\n        <ul class=\"list-none ml-4 mt-1\">\n<li>I – Urgente e Importante (hacer de inmediato).</li>\n<li>II – No Urgente e Importante (planificar tiempo para hacer).</li>\n<li>III – Urgente y No Importante (intentar delegar o minimizar).</li>\n<li>IV – No Urgente y No Importante (evitar en lo posible).</li>\n</ul>\n</li>", "inst_4": "<li data-i18n=\"inst_4\">I – Urgente e Importante (hacer de inmediato).</li>", "inst_5": "<li data-i18n=\"inst_5\">II – No Urgente e Importante (planificar tiempo para hacer).</li>", "inst_6": "<li data-i18n=\"inst_6\">III – Urgente y No Importante (intentar delegar o minimizar).</li>", "inst_7": "<li data-i18n=\"inst_7\">IV – No Urgente y No Importante (evitar en lo posible).</li>", "inst_8": "✅ <strong>Marca las Completadas:</strong> A medida que termines cada tarea, márcala como realizada con la casilla de verificación.", "inst_9": "🔄 <strong>Vista de Roles/Cuadrantes:</strong> Alterna entre la vista agrupada por roles o por cuadrantes usando las pestañas para obtener diferentes perspectivas de tus tareas.", "inst_10": "📊 <strong>Revisa tus Métricas:</strong> Al finalizar la semana, revisa el resumen de tareas completadas y pendientes, y reflexiona sobre tu semana en Revisión Semanal.", "inst_11": "📋 <strong>Exporta y Reinicia:</strong> Guarda un registro de tu semana utilizando Exportar Métricas y Exportar Tareas. Luego comienza una nueva semana con el botón Nueva Semana: solo las tareas completadas se removerán, las pendientes permanecerán para la siguiente semana.", "label_task": "Nueva Tarea:", "label_review": "📝 Revisión semanal:", "no_tasks": "No hay tareas asignadas", "no_tasks_simple": "Sin tareas", "placeholder_review": "Escribe aquí una reflexión sobre tu semana...", "metrics_summary": "📋 Tareas Totales: {total}, ✅ Completadas: {done}, ⏳ Pendientes: {pending}, 📈 Porcentaje completado: {percent}%", "chart_title_quadrants": "Tareas por Cuadrante", "chart_title_completion": "Completadas vs Pendientes", "placeholder_role": "Nuevo rol...", "add_role": "➕ Añadir Rol", "add_task_button": "✔️ Añadir Tarea", "historic_metrics": "📊 Métricas históricas", "metric_total": "Total de tareas", "metric_percent": "Porcentaje completado", "metric_roles": "Roles activos", "metric_quadrants": "Tareas por cuadrante", "chart_completion_title": "📈 Porcentaje de completado por semana", "chart_quadrants_title": "📊 Tareas por cuadrante por semana", "chart_roles_title": "🎭 Roles activos por semana", "opt_role": "Rol", "opt_quadrant": "Cuadrante", "q1": "I - Urgente/Importante", "q2": "II - No Urgente/Importante", "q3": "III - Urgente/No Importante", "q4": "IV - No Urgente/No Importante"}, "en": {"metric_completed": "Completed", "metric_pending": "Pending", "title": "Weekly Planner", "subtitle": "Plan your week with clarity and purpose", "new_task": "New task", "add_task": "Add task", "roles": "Define Roles", "review": "Weekly Review", "new_week": "🌅 New Week", "export_metrics": "📥 Export Metrics", "export_tasks": "📥 Export Tasks", "instructions": "📖 How to Use", "tabs_roles": "By Roles", "tabs_quadrants": "By Quadrants", "inst_1": "🎭 <strong>Define Your Roles:</strong> Identify the key roles in your life (e.g., Parent, Professional, Friend). These will be used to organize your weekly tasks.", "inst_2": "📝 <strong>Add Your Tasks:</strong> For each role, add tasks you want to complete this week. Write a short description and assign it to a priority quadrant.", "inst_3": "🔢 <strong>Prioritize with the Quadrants:</strong> Use Covey’s Time Management Matrix (I–IV):<ul class='list-none ml-4 mt-1'><li>I – Urgent and Important (do immediately).</li><li>II – Not Urgent but Important (schedule it).</li><li>III – Urgent but Not Important (try to delegate or minimize).</li><li>IV – Not Urgent and Not Important (avoid if possible).</li></ul>", "inst_4": "✅ <strong>Mark Completed Tasks:</strong> As you finish each task, check it off.", "inst_5": "🔄 <strong>Roles/Quadrants View:</strong> Switch views to see tasks grouped by role or by quadrant.", "inst_6": "📊 <strong>Review Metrics:</strong> At the end of the week, check your summary and reflect using the <em>Weekly Review</em>.", "inst_7": "📋 <strong>Export and Restart:</strong> Save your week’s data with <strong>Export Metrics</strong> and <strong>Export Tasks</strong>. Then start a new week: completed tasks will be removed, pending ones will remain.", "label_task": "New Task:", "label_review": "📝 Weekly Review:", "no_tasks": "No tasks assigned", "no_tasks_simple": "No tasks", "placeholder_review": "Write here your weekly reflection...", "metrics_summary": "📋 Total Tasks: {total}, ✅ Completed: {done}, ⏳ Pending: {pending}, 📈 Completion Rate: {percent}%", "chart_title_quadrants": "Tasks by Quadrant", "chart_title_completion": "Completed vs Pending", "inst_8": "✅ <strong>Mark Completed Tasks:</strong> As you finish each task, check it off using the checkbox.", "inst_9": "🔄 <strong>Roles/Quadrants View:</strong> Switch between the grouped view by roles or by quadrants for different perspectives.", "inst_10": "📊 <strong>Review Your Metrics:</strong> At the end of the week, check the summary of completed and pending tasks and reflect using the Weekly Review.", "inst_11": "📋 <strong>Export and Reset:</strong> Save a record of your week using Export Metrics and Export Tasks. Then start a new week: only completed tasks will be removed, pending ones will remain.", "placeholder_role": "New role...", "add_role": "➕ Add Role", "add_task_button": "✔️ Add Task", "historic_metrics": "📊 Historical Metrics", "metric_total": "Total Tasks", "metric_percent": "Completion Rate", "metric_roles": "Active Roles", "metric_quadrants": "Tasks by Quadrant", "chart_completion_title": "📈 Weekly Completion Percentage", "chart_quadrants_title": "📊 Tasks by Quadrant per Week", "chart_roles_title": "🎭 Active Roles per Week", "opt_role": "Role", "opt_quadrant": "Quadrant", "q1": "I - Urgent/Important", "q2": "II - Not Urgent/Important", "q3": "III - Urgent/Not Important", "q4": "IV - Not Urgent/Not Important"}};</script>
 <script>
-function applyTranslations(lang) {
-  const t = translations[lang];
+const pasajes = {"es": [{"contenido": "Porque donde esté tu tesoro, allí estará también tu corazón.", "pasaje": "Mateo 6:21"}, {"contenido": "Busquen primeramente el reino de Dios y su justicia, y todas estas cosas les serán añadidas.", "pasaje": "Mateo 6:33"}, {"contenido": "El mayor entre ustedes será su servidor.", "pasaje": "Mateo 23:11"}, {"contenido": "Cuando ustedes digan 'sí', que sea realmente sí; y cuando digan 'no', que sea no.", "pasaje": "Mateo 5:37"}, {"contenido": "De noche y de día, duerma o se levante, la semilla brota y crece sin que él sepa cómo.", "pasaje": "Marcos 4:27"}, {"contenido": "Traten a los demás tal y como quieren que ellos los traten a ustedes.", "pasaje": "Lucas 6:31"}, {"contenido": "Conocerán la verdad, y la verdad los hará libres.", "pasaje": "Juan 8:32"}, {"contenido": "Confía en el Señor de todo corazón, y no te apoyes en tu propia prudencia. Reconócelo en todos tus caminos, y él allanará tus sendas.", "pasaje": "Proverbios 3:5-6"}, {"contenido": "Tu palabra es una lámpara a mis pies; es una luz en mi sendero.", "pasaje": "Salmo 119:105"}, {"contenido": "Tengan cuidado de su manera de vivir. No vivan como necios sino como sabios, aprovechando bien el tiempo.", "pasaje": "Efesios 5:15-16"}, {"contenido": "Porque donde esté tu tesoro, allí estará también tu corazón.", "pasaje": "Mateo 6:21"}, {"contenido": "Busquen primeramente el reino de Dios y su justicia, y todas estas cosas les serán añadidas.", "pasaje": "Mateo 6:33"}, {"contenido": "El mayor entre ustedes será su servidor.", "pasaje": "Mateo 23:11"}, {"contenido": "Cuando ustedes digan 'sí', que sea realmente sí; y cuando digan 'no', que sea no.", "pasaje": "Mateo 5:37"}, {"contenido": "De noche y de día, duerma o se levante, la semilla brota y crece sin que él sepa cómo.", "pasaje": "Marcos 4:27"}, {"contenido": "Traten a los demás tal y como quieren que ellos los traten a ustedes.", "pasaje": "Lucas 6:31"}, {"contenido": "Conocerán la verdad, y la verdad los hará libres.", "pasaje": "Juan 8:32"}, {"contenido": "Confía en el Señor de todo corazón, y no te apoyes en tu propia prudencia. Reconócelo en todos tus caminos, y él allanará tus sendas.", "pasaje": "Proverbios 3:5-6"}, {"contenido": "Tu palabra es una lámpara a mis pies; es una luz en mi sendero.", "pasaje": "Salmo 119:105"}, {"contenido": "Tengan cuidado de su manera de vivir. No vivan como necios sino como sabios, aprovechando bien el tiempo.", "pasaje": "Efesios 5:15-16"}, {"contenido": "Porque donde esté tu tesoro, allí estará también tu corazón.", "pasaje": "Mateo 6:21"}, {"contenido": "Busquen primeramente el reino de Dios y su justicia, y todas estas cosas les serán añadidas.", "pasaje": "Mateo 6:33"}, {"contenido": "El mayor entre ustedes será su servidor.", "pasaje": "Mateo 23:11"}, {"contenido": "Cuando ustedes digan 'sí', que sea realmente sí; y cuando digan 'no', que sea no.", "pasaje": "Mateo 5:37"}, {"contenido": "De noche y de día, duerma o se levante, la semilla brota y crece sin que él sepa cómo.", "pasaje": "Marcos 4:27"}, {"contenido": "Traten a los demás tal y como quieren que ellos los traten a ustedes.", "pasaje": "Lucas 6:31"}, {"contenido": "Conocerán la verdad, y la verdad los hará libres.", "pasaje": "Juan 8:32"}, {"contenido": "Confía en el Señor de todo corazón, y no te apoyes en tu propia prudencia. Reconócelo en todos tus caminos, y él allanará tus sendas.", "pasaje": "Proverbios 3:5-6"}, {"contenido": "Tu palabra es una lámpara a mis pies; es una luz en mi sendero.", "pasaje": "Salmo 119:105"}, {"contenido": "Tengan cuidado de su manera de vivir. No vivan como necios sino como sabios, aprovechando bien el tiempo.", "pasaje": "Efesios 5:15-16"}, {"contenido": "Porque donde esté tu tesoro, allí estará también tu corazón.", "pasaje": "Mateo 6:21"}, {"contenido": "Busquen primeramente el reino de Dios y su justicia, y todas estas cosas les serán añadidas.", "pasaje": "Mateo 6:33"}, {"contenido": "El mayor entre ustedes será su servidor.", "pasaje": "Mateo 23:11"}, {"contenido": "Cuando ustedes digan 'sí', que sea realmente sí; y cuando digan 'no', que sea no.", "pasaje": "Mateo 5:37"}, {"contenido": "De noche y de día, duerma o se levante, la semilla brota y crece sin que él sepa cómo.", "pasaje": "Marcos 4:27"}, {"contenido": "Traten a los demás tal y como quieren que ellos los traten a ustedes.", "pasaje": "Lucas 6:31"}, {"contenido": "Conocerán la verdad, y la verdad los hará libres.", "pasaje": "Juan 8:32"}, {"contenido": "Confía en el Señor de todo corazón, y no te apoyes en tu propia prudencia. Reconócelo en todos tus caminos, y él allanará tus sendas.", "pasaje": "Proverbios 3:5-6"}, {"contenido": "Tu palabra es una lámpara a mis pies; es una luz en mi sendero.", "pasaje": "Salmo 119:105"}, {"contenido": "Tengan cuidado de su manera de vivir. No vivan como necios sino como sabios, aprovechando bien el tiempo.", "pasaje": "Efesios 5:15-16"}, {"contenido": "Porque donde esté tu tesoro, allí estará también tu corazón.", "pasaje": "Mateo 6:21"}, {"contenido": "Busquen primeramente el reino de Dios y su justicia, y todas estas cosas les serán añadidas.", "pasaje": "Mateo 6:33"}, {"contenido": "El mayor entre ustedes será su servidor.", "pasaje": "Mateo 23:11"}, {"contenido": "Cuando ustedes digan 'sí', que sea realmente sí; y cuando digan 'no', que sea no.", "pasaje": "Mateo 5:37"}, {"contenido": "De noche y de día, duerma o se levante, la semilla brota y crece sin que él sepa cómo.", "pasaje": "Marcos 4:27"}, {"contenido": "Traten a los demás tal y como quieren que ellos los traten a ustedes.", "pasaje": "Lucas 6:31"}, {"contenido": "Conocerán la verdad, y la verdad los hará libres.", "pasaje": "Juan 8:32"}, {"contenido": "Confía en el Señor de todo corazón, y no te apoyes en tu propia prudencia. Reconócelo en todos tus caminos, y él allanará tus sendas.", "pasaje": "Proverbios 3:5-6"}, {"contenido": "Tu palabra es una lámpara a mis pies; es una luz en mi sendero.", "pasaje": "Salmo 119:105"}, {"contenido": "Tengan cuidado de su manera de vivir. No vivan como necios sino como sabios, aprovechando bien el tiempo.", "pasaje": "Efesios 5:15-16"}, {"contenido": "Porque donde esté tu tesoro, allí estará también tu corazón.", "pasaje": "Mateo 6:21"}, {"contenido": "Busquen primeramente el reino de Dios y su justicia, y todas estas cosas les serán añadidas.", "pasaje": "Mateo 6:33"}, {"contenido": "El mayor entre ustedes será su servidor.", "pasaje": "Mateo 23:11"}, {"contenido": "Cuando ustedes digan 'sí', que sea realmente sí; y cuando digan 'no', que sea no.", "pasaje": "Mateo 5:37"}, {"contenido": "De noche y de día, duerma o se levante, la semilla brota y crece sin que él sepa cómo.", "pasaje": "Marcos 4:27"}, {"contenido": "Traten a los demás tal y como quieren que ellos los traten a ustedes.", "pasaje": "Lucas 6:31"}, {"contenido": "Conocerán la verdad, y la verdad los hará libres.", "pasaje": "Juan 8:32"}, {"contenido": "Confía en el Señor de todo corazón, y no te apoyes en tu propia prudencia. Reconócelo en todos tus caminos, y él allanará tus sendas.", "pasaje": "Proverbios 3:5-6"}, {"contenido": "Tu palabra es una lámpara a mis pies; es una luz en mi sendero.", "pasaje": "Salmo 119:105"}, {"contenido": "Tengan cuidado de su manera de vivir. No vivan como necios sino como sabios, aprovechando bien el tiempo.", "pasaje": "Efesios 5:15-16"}, {"contenido": "Porque donde esté tu tesoro, allí estará también tu corazón.", "pasaje": "Mateo 6:21"}, {"contenido": "Busquen primeramente el reino de Dios y su justicia, y todas estas cosas les serán añadidas.", "pasaje": "Mateo 6:33"}, {"contenido": "El mayor entre ustedes será su servidor.", "pasaje": "Mateo 23:11"}, {"contenido": "Cuando ustedes digan 'sí', que sea realmente sí; y cuando digan 'no', que sea no.", "pasaje": "Mateo 5:37"}, {"contenido": "De noche y de día, duerma o se levante, la semilla brota y crece sin que él sepa cómo.", "pasaje": "Marcos 4:27"}, {"contenido": "Traten a los demás tal y como quieren que ellos los traten a ustedes.", "pasaje": "Lucas 6:31"}, {"contenido": "Conocerán la verdad, y la verdad los hará libres.", "pasaje": "Juan 8:32"}, {"contenido": "Confía en el Señor de todo corazón, y no te apoyes en tu propia prudencia. Reconócelo en todos tus caminos, y él allanará tus sendas.", "pasaje": "Proverbios 3:5-6"}, {"contenido": "Tu palabra es una lámpara a mis pies; es una luz en mi sendero.", "pasaje": "Salmo 119:105"}, {"contenido": "Tengan cuidado de su manera de vivir. No vivan como necios sino como sabios, aprovechando bien el tiempo.", "pasaje": "Efesios 5:15-16"}], "en": [{"contenido": "For where your treasure is, there your heart will be also.", "pasaje": "Matthew 6:21"}, {"contenido": "But seek first his kingdom and his righteousness, and all these things will be given to you as well.", "pasaje": "Matthew 6:33"}, {"contenido": "The greatest among you will be your servant.", "pasaje": "Matthew 23:11"}, {"contenido": "All you need to say is simply 'Yes' or 'No'; anything beyond this comes from the evil one.", "pasaje": "Matthew 5:37"}, {"contenido": "Night and day, whether he sleeps or gets up, the seed sprouts and grows, though he does not know how.", "pasaje": "Mark 4:27"}, {"contenido": "Do to others as you would have them do to you.", "pasaje": "Luke 6:31"}, {"contenido": "Then you will know the truth, and the truth will set you free.", "pasaje": "John 8:32"}, {"contenido": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.", "pasaje": "Proverbs 3:5-6"}, {"contenido": "Your word is a lamp for my feet, a light on my path.", "pasaje": "Psalm 119:105"}, {"contenido": "Be very careful, then, how you live—not as unwise but as wise, making the most of every opportunity.", "pasaje": "Ephesians 5:15-16"}, {"contenido": "For where your treasure is, there your heart will be also.", "pasaje": "Matthew 6:21"}, {"contenido": "But seek first his kingdom and his righteousness, and all these things will be given to you as well.", "pasaje": "Matthew 6:33"}, {"contenido": "The greatest among you will be your servant.", "pasaje": "Matthew 23:11"}, {"contenido": "All you need to say is simply 'Yes' or 'No'; anything beyond this comes from the evil one.", "pasaje": "Matthew 5:37"}, {"contenido": "Night and day, whether he sleeps or gets up, the seed sprouts and grows, though he does not know how.", "pasaje": "Mark 4:27"}, {"contenido": "Do to others as you would have them do to you.", "pasaje": "Luke 6:31"}, {"contenido": "Then you will know the truth, and the truth will set you free.", "pasaje": "John 8:32"}, {"contenido": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.", "pasaje": "Proverbs 3:5-6"}, {"contenido": "Your word is a lamp for my feet, a light on my path.", "pasaje": "Psalm 119:105"}, {"contenido": "Be very careful, then, how you live—not as unwise but as wise, making the most of every opportunity.", "pasaje": "Ephesians 5:15-16"}, {"contenido": "For where your treasure is, there your heart will be also.", "pasaje": "Matthew 6:21"}, {"contenido": "But seek first his kingdom and his righteousness, and all these things will be given to you as well.", "pasaje": "Matthew 6:33"}, {"contenido": "The greatest among you will be your servant.", "pasaje": "Matthew 23:11"}, {"contenido": "All you need to say is simply 'Yes' or 'No'; anything beyond this comes from the evil one.", "pasaje": "Matthew 5:37"}, {"contenido": "Night and day, whether he sleeps or gets up, the seed sprouts and grows, though he does not know how.", "pasaje": "Mark 4:27"}, {"contenido": "Do to others as you would have them do to you.", "pasaje": "Luke 6:31"}, {"contenido": "Then you will know the truth, and the truth will set you free.", "pasaje": "John 8:32"}, {"contenido": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.", "pasaje": "Proverbs 3:5-6"}, {"contenido": "Your word is a lamp for my feet, a light on my path.", "pasaje": "Psalm 119:105"}, {"contenido": "Be very careful, then, how you live—not as unwise but as wise, making the most of every opportunity.", "pasaje": "Ephesians 5:15-16"}]};
+</script><script>
+const translations = {
+  "es": {
+    "title": "Planificador Semanal",
+    "subtitle": "Organiza tu semana con claridad y propósito",
+    "new_task": "Nueva tarea",
+    "add_task": "Añadir tarea",
+    "roles": "Definir Roles",
+    "review": "Revisión semanal",
+    "new_week": "🌅 Nueva Semana",
+    "export_metrics": "📥 Exportar Métricas",
+    "export_tasks": "📥 Exportar Tareas",
+    "instructions": "Instrucciones de uso",
+    "tabs_roles": "Por Roles",
+    "tabs_quadrants": "Por Cuadrantes",
+    "inst_1": "🎭 <strong>Define tus Roles:</strong> Identifica los roles importantes en tu vida (por ejemplo: Padre, Profesional, Amigo). Estos serán las categorías bajo las cuales organizarás tus tareas semanales.",
+    "inst_2": "📝 <strong>Agrega tus Tareas:</strong> Para cada rol, añade las tareas que deseas realizar esta semana. Escribe una breve descripción y asigna el cuadrante correspondiente según su urgencia e importancia.",
+    "inst_3": "🔢 <strong>Prioriza con los Cuadrantes:</strong> Utiliza la Matriz de Prioridades (I-IV) para clasificar cada tarea:",
+    "inst_3_sub": "<ul class='list-none ml-4 mt-1'><li>I – Urgente e Importante (hacer de inmediato).</li><li>II – No Urgente e Importante (planificar tiempo para hacer).</li><li>III – Urgente y No Importante (intentar delegar o minimizar).</li><li>IV – No Urgente y No Importante (evitar en lo posible).</li></ul>",
+    "inst_4": "I – Urgente e Importante (hacer de inmediato).",
+    "inst_5": "II – No Urgente e Importante (planificar tiempo para hacer).",
+    "inst_6": "III – Urgente y No Importante (intentar delegar o minimizar).",
+    "inst_7": "IV – No Urgente y No Importante (evitar en lo posible).",
+    "inst_8": "✅ <strong>Marca las Completadas:</strong> A medida que termines cada tarea, márcala como realizada con la casilla de verificación.",
+    "inst_9": "🔄 <strong>Vista de Roles/Cuadrantes:</strong> Alterna entre la vista agrupada por roles o por cuadrantes usando las pestañas para obtener diferentes perspectivas de tus tareas.",
+    "inst_10": "📊 <strong>Revisa tus Métricas:</strong> Al finalizar la semana, revisa el resumen de tareas completadas y pendientes, y reflexiona sobre tu semana en Revisión Semanal.",
+    "inst_11": "📋 <strong>Exporta y Reinicia:</strong> Guarda un registro de tu semana utilizando Exportar Métricas y Exportar Tareas. Luego comienza una nueva semana con el botón Nueva Semana: solo las tareas completadas se removerán, las pendientes permanecerán para la siguiente semana.",
+    "label_task": "Nueva Tarea:",
+    "label_review": "📝 Revisión semanal:",
+    "no_tasks": "No hay tareas asignadas",
+    "no_tasks_simple": "Sin tareas",
+    "placeholder_review": "Escribe aquí una reflexión sobre tu semana...",
+    "metrics_summary": "📋 Tareas Totales: {total}, ✅ Completadas: {done}, ⏳ Pendientes: {pending}, 📈 Porcentaje completado: {percent}%",
+    "chart_title_quadrants": "Tareas por Cuadrante",
+    "chart_title_completion": "Completadas vs Pendientes",
+    "add_role": "Añadir Rol",
+    "add_task_button": "Añadir Tarea",
+    "chart_completion_title": "Porcentaje de Completado por Semana",
+    "chart_quadrants_title": "Tareas por Cuadrante por Semana",
+    "chart_roles_title": "Roles Activos por Semana",
+    "instructions_title": "📖 Instrucciones de uso",
+    "metric_percent": "Porcentaje Completado",
+    "metric_quadrants": "Tareas por Cuadrante",
+    "metric_roles": "Roles Activos",
+    "metric_total": "Total de Tareas",
+    "placeholder_role": "Nuevo rol...",
+    "placeholder_task": "Descripción de la tarea",
+    "metric_completed": "Completadas",
+    "metric_pending": "Pendientes"
+  },
+  "en": {
+    "title": "Weekly Planner",
+    "subtitle": "Plan your week with clarity and purpose",
+    "new_task": "New task",
+    "add_task": "Add task",
+    "roles": "Define Roles",
+    "review": "Weekly Review",
+    "new_week": "🌅 New Week",
+    "export_metrics": "📥 Export Metrics",
+    "export_tasks": "📥 Export Tasks",
+    "instructions": "How to Use",
+    "tabs_roles": "By Roles",
+    "tabs_quadrants": "By Quadrants",
+    "inst_1": "🎭 <strong>Define Your Roles:</strong> Identify the key roles in your life (e.g., Parent, Professional, Friend). These will be used to organize your weekly tasks.",
+    "inst_2": "📝 <strong>Add Your Tasks:</strong> For each role, add tasks you want to complete this week. Write a short description and assign it to a priority quadrant.",
+    "inst_3": "🔢 <strong>Prioritize with Quadrants:</strong> Use the Priority Matrix (I-IV) to classify each task:",
+    "inst_3_sub": "<ul class='list-none ml-4 mt-1'><li>I – Urgent and Important (do immediately).</li><li>II – Not Urgent but Important (schedule time to do).</li><li>III – Urgent but Not Important (try to delegate or minimize).</li><li>IV – Not Urgent and Not Important (avoid if possible).</li></ul>",
+    "inst_4": "I – Urgent and Important (do immediately).",
+    "inst_5": "II – Not Urgent but Important (schedule it).",
+    "inst_6": "III – Urgent but Not Important (try to delegate or minimize).",
+    "inst_7": "IV – Not Urgent and Not Important (avoid if possible).",
+    "inst_8": "✅ <strong>Mark Completed Tasks:</strong> As you finish each task, check it off using the checkbox.",
+    "inst_9": "🔄 <strong>Roles/Quadrants View:</strong> Switch between the grouped view by roles or by quadrants for different perspectives.",
+    "inst_10": "📊 <strong>Review Your Metrics:</strong> At the end of the week, check the summary of completed and pending tasks and reflect using the Weekly Review.",
+    "inst_11": "📋 <strong>Export and Reset:</strong> Save a record of your week using Export Metrics and Export Tasks. Then start a new week: only completed tasks will be removed, pending ones will remain.",
+    "label_task": "New Task:",
+    "label_review": "📝 Weekly Review:",
+    "no_tasks": "No tasks assigned",
+    "no_tasks_simple": "No tasks",
+    "placeholder_review": "Write here your weekly reflection...",
+    "metrics_summary": "📋 Total Tasks: {total}, ✅ Completed: {done}, ⏳ Pending: {pending}, 📈 Completion Rate: {percent}%",
+    "chart_title_quadrants": "Tasks by Quadrant",
+    "chart_title_completion": "Completed vs Pending",
+    "add_role": "Add Role",
+    "add_task_button": "Add Task",
+    "chart_completion_title": "Weekly Completion Percentage",
+    "chart_quadrants_title": "Tasks per Quadrant per Week",
+    "chart_roles_title": "Active Roles per Week",
+    "instructions_title": "📖 Instructions",
+    "metric_percent": "Completion Percentage",
+    "metric_quadrants": "Tasks by Quadrant",
+    "metric_roles": "Active Roles",
+    "metric_total": "Total Tasks",
+    "placeholder_role": "New role...",
+    "placeholder_task": "Task description",
+    "metric_completed": "Completed",
+    "metric_pending": "Pending"
+  }
+};
 
+function applyTranslations(lang) {
+  const t = translations[lang] || translations["es"]; // Fallback to Spanish if language not found
+
+  // Update text content for elements with data-i18n attribute
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (t[key]) el.innerHTML = t[key];
+    if (t[key]) {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.value = t[key];
+      } else {
+        // For instruction items, preserve the HTML structure
+        if (key.startsWith('inst_')) {
+          el.innerHTML = t[key];
+        } else {
+          el.textContent = t[key];
+        }
+      }
+    }
   });
 
-  document.querySelectorAll('option[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (t[key]) el.textContent = t[key];
-  });
-
+  // Update placeholders
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
     if (t[key]) el.placeholder = t[key];
   });
 
+  // Update chart titles and labels
   if (typeof chartQuadrants !== "undefined" && chartQuadrants) {
-    chartQuadrants.options.plugins.title.text = t.chart_title_quadrants;
+    chartQuadrants.options.plugins.title = {
+      display: true,
+      text: t.chart_title_quadrants
+    };
     chartQuadrants.update();
   }
+
   if (typeof chartCompletion !== "undefined" && chartCompletion) {
-    chartCompletion.options.plugins.title.text = t.chart_title_completion;
-    chartCompletion.data.labels = [t.metric_completed || "Completadas", t.metric_pending || "Pendientes"];
+    chartCompletion.data.labels = [t.metric_completed, t.metric_pending];
     chartCompletion.update();
   }
+
   if (typeof chartHistoricalCompletion !== "undefined" && chartHistoricalCompletion) {
-    chartHistoricalCompletion.options.plugins.title.text = t.chart_completion_title;
+    chartHistoricalCompletion.options.plugins.title = {
+      display: true,
+      text: t.chart_completion_title
+    };
     chartHistoricalCompletion.update();
   }
+
   if (typeof chartHistoricalQuadrants !== "undefined" && chartHistoricalQuadrants) {
-    chartHistoricalQuadrants.options.plugins.title.text = t.chart_quadrants_title;
+    chartHistoricalQuadrants.options.plugins.title = {
+      display: true,
+      text: t.chart_quadrants_title
+    };
     chartHistoricalQuadrants.update();
   }
+
   if (typeof chartHistoricalRoles !== "undefined" && chartHistoricalRoles) {
-    chartHistoricalRoles.options.plugins.title.text = t.chart_roles_title;
+    chartHistoricalRoles.options.plugins.title = {
+      display: true,
+      text: t.chart_roles_title
+    };
     chartHistoricalRoles.update();
   }
-
-  document.querySelector('[data-i18n="metric_total"]')?.textContent = t.metric_total;
-  document.querySelector('[data-i18n="metric_percent"]')?.textContent = t.metric_percent;
-  document.querySelector('[data-i18n="metric_roles"]')?.textContent = t.metric_roles;
-  document.querySelector('[data-i18n="metric_quadrants"]')?.textContent = t.metric_quadrants;
 }
 
 function setLanguage(lang) {
   localStorage.setItem("habitus_lang", lang);
-  applyTranslations(lang);
-  updateRoleOptions();
-  renderViews();
-  updateCharts();
+  
+  // Force a complete refresh of all translations
+  const t = translations[lang] || translations["es"];
+  
+  // Update all elements with data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.value = t[key];
+      } else {
+        // For instruction items, preserve the HTML structure
+        if (key.startsWith('inst_')) {
+          el.innerHTML = t[key];
+        } else {
+          el.textContent = t[key];
+        }
+      }
+    }
+  });
 
+  // Update all placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key]) el.placeholder = t[key];
+  });
+
+  // Update inspirational quote
   const elegido = pasajes[lang][Math.floor(Math.random() * pasajes[lang].length)];
   const contenedor = document.getElementById("pasaje-inspirador");
   if (contenedor) {
@@ -1182,14 +1320,59 @@ function setLanguage(lang) {
       </div>
     `;
   }
+
+  // Update UI components
+  updateRoleOptions();
+  renderViews();
+  updateCharts();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const lang = localStorage.getItem("habitus_lang") || "es";
   applyTranslations(lang);
-  updateRoleOptions();
+  
+  // Register Service Worker
+  if ('serviceWorker' in navigator) {
+    const currentPath = window.location.pathname;
+    const basePath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+    navigator.serviceWorker.register(basePath + 'sw.js')
+      .then(registration => {
+        console.log('ServiceWorker registration successful');
+      })
+      .catch(err => {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+  }
+
+  renderRoleList();
+  const addRoleBtn = document.getElementById("addRoleBtn");
+  addRoleBtn.onclick = addRole;
+  initCharts();
   renderViews();
-  updateCharts();
+});
+
+// Add this function to handle instructions toggle
+function toggleInstructions() {
+  const content = document.getElementById('instructionsContent');
+  const toggle = document.getElementById('instructionsToggle');
+  
+  if (content.style.display === 'none') {
+    content.style.display = 'block';
+    toggle.textContent = '▼';
+  } else {
+    content.style.display = 'none';
+    toggle.textContent = '▶';
+  }
+}
+
+// Initialize instructions as visible by default
+document.addEventListener('DOMContentLoaded', () => {
+  const content = document.getElementById('instructionsContent');
+  const toggle = document.getElementById('instructionsToggle');
+  content.style.display = 'block';
+  toggle.textContent = '▼';
+  
+  // ... rest of your existing DOMContentLoaded code ...
 });
 </script>
 </body>
