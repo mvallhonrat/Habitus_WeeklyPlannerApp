@@ -1,11 +1,12 @@
 {
   "name": "Habitus - Planificador Semanal",
   "short_name": "Habitus",
-  "start_url": "index.html",
+  "start_url": ".",
+  "scope": ".",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4f46e5",
-  "description": "Organiza tu semana seg\u00fan roles y prioridades.",
+  "description": "Organiza tu semana según roles y prioridades.",
   "icons": [
     {
       "src": "icons/icon-192x192.png",
