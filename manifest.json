@@ -1,7 +1,7 @@
 {
   "name": "Habitus - Planificador Semanal",
   "short_name": "Habitus",
-  "start_url": "Habitus_WeeklyPlannerApp.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4f46e5",
